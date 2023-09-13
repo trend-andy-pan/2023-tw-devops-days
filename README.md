@@ -8,3 +8,5 @@ If you have any suggestions, please get in touch with us. Thank you!
 - Grafana
 - JamesOsgood/mongodb-grafana (https://github.com/JamesOsgood/mongodb-grafana)
 - MongoDB Atlas
+- React
+- NextUI
