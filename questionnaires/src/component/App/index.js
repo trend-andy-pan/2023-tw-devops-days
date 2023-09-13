@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -8,21 +8,16 @@ import {
   Progress,
 } from "@nextui-org/react";
 
-import QuestionnairesContext from "../context/questionnaires";
-import Questionnaires from "./Questionnaires";
+import QuestionnairesContext from "../../context/questionnaires";
+import Questionnaires from "../Questionnaires";
 
-import data from "../questionnaire.json";
+import logoImg from "../../assets/TrendMicroLogo.png";
 
 export default function App() {
   const {
     ctxValue: { step, maxStep },
     setStep,
-    setMaxStep,
   } = useContext(QuestionnairesContext);
-
-  useEffect(() => {
-    setMaxStep(data.questionnaires.length - 1);
-  }, [setMaxStep]);
 
   const handleNext = () => () => {
     setStep(step + 1);
@@ -32,11 +27,15 @@ export default function App() {
     setStep(step - 1);
   };
 
+  const handleSubmit = () => () => {
+    alert("送出");
+  };
+
   return (
-    <main className="flex flex-col h-screen p-8">
-      <Navbar shouldHideOnScroll className="flex">
+    <>
+      <Navbar className="flex">
         <NavbarBrand className="flex-none max-w-[150px] fixed">
-          <Image width={150} alt="Trend Micro" src="/TrendMicroLogo.png" />
+          <Image width={150} alt="Trend Micro" src={logoImg} />
         </NavbarBrand>
         <NavbarContent className="grow" justify="center">
           <span className="font-bold text-inherit">Questionnaires</span>
@@ -56,25 +55,37 @@ export default function App() {
             上一題
           </Button>
 
-          <Button
-            color="primary"
-            variant="ghost"
-            isDisabled={step >= maxStep}
-            onClick={handleNext()}
-          >
-            下一題
-          </Button>
+          {step === maxStep ? (
+            <Button
+              color="success"
+              variant="ghost"
+              isDisabled={step !== maxStep}
+              onClick={handleSubmit()}
+            >
+              送出
+            </Button>
+          ) : (
+            <Button
+              color="primary"
+              variant="ghost"
+              isDisabled={step >= maxStep}
+              onClick={handleNext()}
+            >
+              下一題
+            </Button>
+          )}
         </div>
         <Progress
           size="md"
           value={step}
+          label={<></>}
           valueLabel={`${step + 1} / ${maxStep + 1}`}
           maxValue={maxStep}
           color="success"
           showValueLabel={true}
-          className="w-full"
+          className="w-full pb-4"
         />
       </footer>
-    </main>
+    </>
   );
 }

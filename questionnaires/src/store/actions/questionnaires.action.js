@@ -6,9 +6,24 @@ export const setStep = (payload) => {
     payload,
   };
 };
+
 export const setMaxStep = (payload) => {
   return {
     type: actionType.SET_MAX_STEP,
+    payload,
+  };
+};
+
+export const setQuestions = (payload) => {
+  return {
+    type: actionType.SET_QUESTIONS,
+    payload,
+  };
+};
+
+export const setLoading = (payload) => {
+  return {
+    type: actionType.SET_LOADING,
     payload,
   };
 };

@@ -18,6 +18,14 @@ export const QuestionnairesProvider = ({ children }) => {
     dispatch(questionnairesActions.setMaxStep(step));
   }, []);
 
+  const setQuestions = useCallback((questions) => {
+    dispatch(questionnairesActions.setQuestions(questions));
+  }, []);
+
+  const setLoading = useCallback((loading) => {
+    dispatch(questionnairesActions.setLoading(loading));
+  }, []);
+
   const resetToDefault = useCallback(() => {
     dispatch(questionnairesActions.resetToDefault());
   }, []);
@@ -26,6 +34,8 @@ export const QuestionnairesProvider = ({ children }) => {
     ctxValue: state,
     setStep,
     setMaxStep,
+    setQuestions,
+    setLoading,
     resetToDefault,
   };
 
