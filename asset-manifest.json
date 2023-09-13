@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/2023-tw-devops-days/static/js/main.40aaaa71.js",
-    "index.html": "/2023-tw-devops-days/index.html",
-    "main.40aaaa71.js.map": "/2023-tw-devops-days/static/js/main.40aaaa71.js.map"
+    "main.js": "/static/js/main.40aaaa71.js",
+    "index.html": "/index.html",
+    "main.40aaaa71.js.map": "/static/js/main.40aaaa71.js.map"
   },
   "entrypoints": [
     "static/js/main.40aaaa71.js"
