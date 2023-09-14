@@ -1,0 +1,26 @@
+name: github-actions
+on:
+  repository_dispatch:
+    type:
+      - submit-request
+
+jobs:
+  Send_To_MongoDB:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Questionnaires data
+        env:
+          QUESTIONNAIRES_DATA: ${{ github.event.client_payload.questionnaires }}
+        run: echo $QUESTIONNAIRES_DATA > questionnaires.json
+
+      - name: Install MongoDB tools
+        env:
+          EBE_FILE_NAME: mongodb-database-tools-ubuntu2004-x86_64-100.8.0.deb
+        run: |
+          sudo apt-get update && sudo apt-get -y install curl
+          curl -O https://fastdl.mongodb.org/tools/db/${{ env.EBE_FILE_NAME }} && sudo apt install ./${{ env.EBE_FILE_NAME }}
+
+      - name: Insert questionnaires to MongoDB
+        if: github.event.client_payload.questionnaires != ''
+        run: |
+          mongoimport '${{ secrets.MONGODB_ATLAS_CONN_STR }}' --db=2023-tw-devops-day --collection=questionnaires --mode=insert --type=json --file=questionnaires.json
