@@ -21,9 +21,23 @@ export const setQuestions = (payload) => {
   };
 };
 
+export const setKey = (payload) => {
+  return {
+    type: actionType.SET_KEY,
+    payload,
+  };
+};
+
 export const setLoading = (payload) => {
   return {
     type: actionType.SET_LOADING,
+    payload,
+  };
+};
+
+export const setFormControl = (payload) => {
+  return {
+    type: actionType.SET_FORM_CONTROL,
     payload,
   };
 };

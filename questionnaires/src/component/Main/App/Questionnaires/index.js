@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ScrollShadow } from "@nextui-org/react";
 
-import QuestionnairesContext from "../../context/questionnaires";
+import QuestionnairesContext from "../../../../context/questionnaires";
 import QuestionCard from "./QuestionCard";
 
 export default function Questionnaires() {

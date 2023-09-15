@@ -6,7 +6,9 @@ export const initialState = {
   step: 0,
   maxStep: 0,
   questions: [],
+  key: "",
   loading: true,
+  formControl: undefined,
 };
 
 const azurePageReducer = (state, action) => {
@@ -26,10 +28,20 @@ const azurePageReducer = (state, action) => {
         ...state,
         questions: action.payload,
       };
+    case actionType.SET_KEY:
+      return {
+        ...state,
+        key: action.payload,
+      };
     case actionType.SET_LOADING:
       return {
         ...state,
         loading: action.payload,
+      };
+    case actionType.SET_FORM_CONTROL:
+      return {
+        ...state,
+        formControl: action.payload,
       };
     case actionType.RESET_TO_DEFAULT:
       return _.cloneDeep(initialState);

@@ -22,8 +22,16 @@ export const QuestionnairesProvider = ({ children }) => {
     dispatch(questionnairesActions.setQuestions(questions));
   }, []);
 
+  const setKey = useCallback((key) => {
+    dispatch(questionnairesActions.setKey(key));
+  }, []);
+
   const setLoading = useCallback((loading) => {
     dispatch(questionnairesActions.setLoading(loading));
+  }, []);
+
+  const setFormControl = useCallback((formControl) => {
+    dispatch(questionnairesActions.setFormControl(formControl));
   }, []);
 
   const resetToDefault = useCallback(() => {
@@ -35,7 +43,9 @@ export const QuestionnairesProvider = ({ children }) => {
     setStep,
     setMaxStep,
     setQuestions,
+    setKey,
     setLoading,
+    setFormControl,
     resetToDefault,
   };
 

@@ -9,16 +9,17 @@ import {
   Skeleton,
 } from "@nextui-org/react";
 import { RiQuestionAnswerFill } from "react-icons/ri";
+import { Controller } from "react-hook-form";
 
-import QuestionnairesContext from "../../../context/questionnaires";
-import { QuestionRadio } from "../QuestionRadio";
-import { QuestionRadioOthers } from "../QuestionRadioOthers";
-import { QuestionCheckboxOthers } from "../QuestionCheckboxOthers";
-import { QuestionCheckbox } from "../QuestionCheckbox";
+import QuestionnairesContext from "../../../../../context/questionnaires";
+import { QuestionRadio } from "./QuestionRadio";
+import { QuestionRadioOthers } from "./QuestionRadioOthers";
+import { QuestionCheckboxOthers } from "./QuestionCheckboxOthers";
+import { QuestionCheckbox } from "./QuestionCheckbox";
 
-export default function QuestionCard() {
+export default function QuestionCard({ step }) {
   const {
-    ctxValue: { step, questions, loading },
+    ctxValue: { questions, loading, formControl },
   } = useContext(QuestionnairesContext);
 
   const {
@@ -28,35 +29,57 @@ export default function QuestionCard() {
     otherAnswer = false,
   } = questions[step] ?? {};
 
+  if (type === "") return null;
+
   const renderRadio = () => {
     const groupList = answers.map((answer) => {
       return (
-        <QuestionRadio key={answer} value={answer} size="lg">
+        <QuestionRadio key={`${step}-${answer}`} value={answer} size="lg">
           {answer}
         </QuestionRadio>
       );
     });
 
     if (otherAnswer) {
-      groupList.push(<QuestionRadioOthers answers={answers} />);
+      groupList.push(
+        <QuestionRadioOthers key={`${step}-other`} answers={answers} />
+      );
     }
-    return <RadioGroup>{groupList}</RadioGroup>;
+    return (
+      <Controller
+        name={`answer-${step}`}
+        control={formControl}
+        defaultValue={""}
+        render={({ field }) => <RadioGroup {...field}>{groupList}</RadioGroup>}
+      />
+    );
   };
 
   const renderCheckbox = () => {
     const groupList = answers.map((answer) => {
       return (
-        <QuestionCheckbox key={answer} value={answer} size="lg">
+        <QuestionCheckbox key={`${step}-${answer}`} value={answer} size="lg">
           {answer}
         </QuestionCheckbox>
       );
     });
 
     if (otherAnswer) {
-      groupList.push(<QuestionCheckboxOthers answers={answers} />);
+      groupList.push(
+        <QuestionCheckboxOthers key={`${step}-other`} answers={answers} />
+      );
     }
 
-    return <CheckboxGroup>{groupList}</CheckboxGroup>;
+    return (
+      <Controller
+        name={`answer-${step}`}
+        control={formControl}
+        defaultValue={""}
+        render={({ field }) => (
+          <CheckboxGroup {...field}>{groupList}</CheckboxGroup>
+        )}
+      />
+    );
   };
 
   const renderCardBody = () => {
@@ -82,6 +105,12 @@ export default function QuestionCard() {
       </Skeleton>
       <Divider />
       <Skeleton isLoaded={!loading} className="rounded-lg h-full">
+        <Controller
+          name={`question-${step}`}
+          control={formControl}
+          defaultValue={question}
+          render={() => {}}
+        />
         <CardBody>{renderCardBody()}</CardBody>
       </Skeleton>
     </Card>
