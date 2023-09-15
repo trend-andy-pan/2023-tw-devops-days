@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/2023-tw-devops-days/static/css/main.955a5ac2.css",
-    "main.js": "/2023-tw-devops-days/static/js/main.527fa6a5.js",
+    "main.js": "/2023-tw-devops-days/static/js/main.b8aa3274.js",
     "index.html": "/2023-tw-devops-days/index.html",
     "main.955a5ac2.css.map": "/2023-tw-devops-days/static/css/main.955a5ac2.css.map",
-    "main.527fa6a5.js.map": "/2023-tw-devops-days/static/js/main.527fa6a5.js.map"
+    "main.b8aa3274.js.map": "/2023-tw-devops-days/static/js/main.b8aa3274.js.map"
   },
   "entrypoints": [
     "static/css/main.955a5ac2.css",
-    "static/js/main.527fa6a5.js"
+    "static/js/main.b8aa3274.js"
   ]
 }
