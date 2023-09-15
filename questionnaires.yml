@@ -1,0 +1,34 @@
+questionnaires:
+  # - question: 問題
+  #   type: radio/checkbox
+  #   otherAnswer: false/true
+  #   answers:
+  #     - 答案1
+  #     - 答案2
+  #     - 答案3
+  #     - 答案4
+
+  - question: DevOps 的經驗
+    type: radio
+    otherAnswer: false
+    answers:
+      - 未滿一年
+      - 1~3年
+      - 3~4年
+      - 5年以上
+
+  - question: 你的工作性質屬於？
+    type: radio
+    otherAnswer: true
+    answers:
+      - SRE
+      - DevOps
+      - Backend Developer
+
+  - question: 團隊使用的程式語言？
+    type: checkbox
+    otherAnswer: true
+    answers:
+      - Python
+      - Go
+      - Javascript
