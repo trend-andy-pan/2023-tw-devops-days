@@ -11,6 +11,7 @@ If you have any suggestions, please get in touch with us. Thank you!
 - React
 - NextUI
 - Tailwind CSS
+- React Hook Form
 
 ## How to run on your local
 

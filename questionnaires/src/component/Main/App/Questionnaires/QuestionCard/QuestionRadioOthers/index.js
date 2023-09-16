@@ -1,14 +1,50 @@
-import React from "react";
+import React, { useContext, useImperativeHandle, useState } from "react";
 import { Radio, Input } from "@nextui-org/react";
 
-export const QuestionRadioOthers = ({ answers }) => {
+import QuestionnairesContext from "../../../../../../context/questionnaires";
+
+export const QuestionRadioOthers = ({ step, name, radioOthersRef }) => {
+  const [dataSelected, setDataSelected] = useState(false);
+  const [radioValue, setRadioValue] = useState("其他");
+
+  const {
+    ctxValue: {
+      reactForm: { setValue },
+    },
+  } = useContext(QuestionnairesContext);
+
+  useImperativeHandle(radioOthersRef, () => ({
+    updateSelect: () => {
+      setDataSelected(false);
+    },
+  }));
+
+  const handleChange = (e) => {
+    setValue(name, e.target.value);
+    setRadioValue(e.target.value);
+
+    setDataSelected(true);
+  };
+
+  const handleClick = () => {
+    setDataSelected(true);
+    setValue(name, radioValue);
+  };
+
   return (
     <div
-      key={`${answers}-other-radio`}
-      className="flex gap-4 p-4 cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent border-transparent bg-content1 hover:bg-content4 flex-row-reverse"
+      data-selected={dataSelected}
+      key={`${step}-other-radio`}
+      onClick={handleClick}
+      className="flex gap-4 p-4 cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent border-transparent bg-content1 hover:bg-content4 flex-row-reverse border-2 border-transparent data-[selected=true]:border-primary"
     >
-      <Radio className="flex-none" value="other" size="lg"></Radio>
-      <Input className="grow" label="其他" />
+      <Radio className="flex-none" value={radioValue} size="lg"></Radio>
+      <Input
+        className="grow other-input"
+        labelPlacement="outside-left"
+        label="其他"
+        onChange={handleChange}
+      />
     </div>
   );
 };
