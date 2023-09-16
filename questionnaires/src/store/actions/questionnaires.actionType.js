@@ -4,5 +4,5 @@ export const SET_QUESTIONS = "SET_QUESTIONS";
 export const SET_KEY = "SET_KEY";
 
 export const SET_LOADING = "SET_LOADING";
-export const SET_FORM_CONTROL = "SET_FORM_CONTROL";
+export const SET_REACT_FORM = "SET_REACT_FORM";
 export const RESET_TO_DEFAULT = "RESET_TO_DEFAULT";

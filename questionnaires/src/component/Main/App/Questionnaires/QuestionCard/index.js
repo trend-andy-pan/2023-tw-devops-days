@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import {
   Card,
   CardHeader,
@@ -17,9 +17,17 @@ import { QuestionRadioOthers } from "./QuestionRadioOthers";
 import { QuestionCheckboxOthers } from "./QuestionCheckboxOthers";
 import { QuestionCheckbox } from "./QuestionCheckbox";
 
+import "./index.css";
+
 export default function QuestionCard({ step }) {
+  const childRef = useRef();
+
   const {
-    ctxValue: { questions, loading, formControl },
+    ctxValue: {
+      questions,
+      loading,
+      reactForm: { control },
+    },
   } = useContext(QuestionnairesContext);
 
   const {
@@ -42,15 +50,32 @@ export default function QuestionCard({ step }) {
 
     if (otherAnswer) {
       groupList.push(
-        <QuestionRadioOthers key={`${step}-other`} answers={answers} />
+        <QuestionRadioOthers
+          {...{
+            key: `${step}-other`,
+            step,
+            name: `answer-${step}`,
+            radioOthersRef: childRef,
+          }}
+        />
       );
     }
     return (
       <Controller
         name={`answer-${step}`}
-        control={formControl}
+        control={control}
         defaultValue={""}
-        render={({ field }) => <RadioGroup {...field}>{groupList}</RadioGroup>}
+        render={({ field }) => (
+          <RadioGroup
+            {...field}
+            onChange={(e) => {
+              if (childRef.current) childRef.current.updateSelect();
+              field.onChange(e);
+            }}
+          >
+            {groupList}
+          </RadioGroup>
+        )}
       />
     );
   };
@@ -66,17 +91,33 @@ export default function QuestionCard({ step }) {
 
     if (otherAnswer) {
       groupList.push(
-        <QuestionCheckboxOthers key={`${step}-other`} answers={answers} />
+        <QuestionCheckboxOthers
+          {...{
+            key: `${step}-other`,
+            step,
+            name: `answer-${step}`,
+            radioCheckboxRef: childRef,
+          }}
+        />
       );
     }
 
     return (
       <Controller
         name={`answer-${step}`}
-        control={formControl}
-        defaultValue={""}
+        control={control}
+        defaultValue={[]}
         render={({ field }) => (
-          <CheckboxGroup {...field}>{groupList}</CheckboxGroup>
+          <CheckboxGroup
+            {...field}
+            onChange={(e) => {
+              if (childRef.current) childRef.current.updateSelect();
+
+              field.onChange(e);
+            }}
+          >
+            {groupList}
+          </CheckboxGroup>
         )}
       />
     );
@@ -107,7 +148,7 @@ export default function QuestionCard({ step }) {
       <Skeleton isLoaded={!loading} className="rounded-lg h-full">
         <Controller
           name={`question-${step}`}
-          control={formControl}
+          control={control}
           defaultValue={question}
           render={() => {}}
         />

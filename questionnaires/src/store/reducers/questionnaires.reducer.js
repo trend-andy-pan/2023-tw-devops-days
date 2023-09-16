@@ -8,7 +8,7 @@ export const initialState = {
   questions: [],
   key: "",
   loading: true,
-  formControl: undefined,
+  reactForm: {},
 };
 
 const azurePageReducer = (state, action) => {
@@ -38,10 +38,10 @@ const azurePageReducer = (state, action) => {
         ...state,
         loading: action.payload,
       };
-    case actionType.SET_FORM_CONTROL:
+    case actionType.SET_REACT_FORM:
       return {
         ...state,
-        formControl: action.payload,
+        reactForm: action.payload,
       };
     case actionType.RESET_TO_DEFAULT:
       return _.cloneDeep(initialState);

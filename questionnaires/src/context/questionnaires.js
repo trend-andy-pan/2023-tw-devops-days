@@ -30,8 +30,8 @@ export const QuestionnairesProvider = ({ children }) => {
     dispatch(questionnairesActions.setLoading(loading));
   }, []);
 
-  const setFormControl = useCallback((formControl) => {
-    dispatch(questionnairesActions.setFormControl(formControl));
+  const setReactForm = useCallback((reactForm) => {
+    dispatch(questionnairesActions.setReactForm(reactForm));
   }, []);
 
   const resetToDefault = useCallback(() => {
@@ -45,7 +45,7 @@ export const QuestionnairesProvider = ({ children }) => {
     setQuestions,
     setKey,
     setLoading,
-    setFormControl,
+    setReactForm,
     resetToDefault,
   };
 

@@ -35,9 +35,9 @@ export const setLoading = (payload) => {
   };
 };
 
-export const setFormControl = (payload) => {
+export const setReactForm = (payload) => {
   return {
-    type: actionType.SET_FORM_CONTROL,
+    type: actionType.SET_REACT_FORM,
     payload,
   };
 };
