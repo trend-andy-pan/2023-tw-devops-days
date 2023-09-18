@@ -13,9 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Questionnaires data
+        if: github.event.client_payload.questionnaires != ''
         env:
           QUESTIONNAIRES_DATA: ${{ github.event.client_payload.questionnaires }}
         run: echo $QUESTIONNAIRES_DATA > questionnaires.json
+
+      - name: Users data
+        if: github.event.client_payload.users != ''
+        env:
+          USERS_DATA: ${{ github.event.client_payload.users }}
+        run: echo $USERS_DATA > users.json
 
       - name: Install MongoDB tools
         env:
@@ -32,7 +39,7 @@ jobs:
       - name: Insert personal information to MongoDB
         if: github.event.client_payload.users != ''
         run: |
-          mongoimport '${{ secrets.MONGODB_ATLAS_CONN_STR }}' --db=2023-tw-devops-day --collection=users --mode=insert --type=json --file=questionnaires.json
+          mongoimport '${{ secrets.MONGODB_ATLAS_CONN_STR }}' --db=2023-tw-devops-day --collection=users --mode=insert --type=json --file=users.json
 
   Build_And_Deploy:
     if: github.event_name == 'push'
