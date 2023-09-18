@@ -29,6 +29,11 @@ jobs:
         run: |
           mongoimport '${{ secrets.MONGODB_ATLAS_CONN_STR }}' --db=2023-tw-devops-day --collection=questionnaires --mode=insert --type=json --file=questionnaires.json
 
+      - name: Insert personal information to MongoDB
+        if: github.event.client_payload.users != ''
+        run: |
+          mongoimport '${{ secrets.MONGODB_ATLAS_CONN_STR }}' --db=2023-tw-devops-day --collection=users --mode=insert --type=json --file=questionnaires.json
+
   Build_And_Deploy:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest

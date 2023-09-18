@@ -26,7 +26,7 @@ export default function QuestionCard({ step }) {
     ctxValue: {
       questions,
       loading,
-      reactForm: { control },
+      questionsForm: { control },
     },
   } = useContext(QuestionnairesContext);
 
@@ -135,12 +135,15 @@ export default function QuestionCard({ step }) {
   };
 
   return (
-    <Card className="flex-0 w-full" disableAnimation>
+    <Card className="flex-0 w-full">
       <Skeleton isLoaded={!loading} className="rounded-lg">
         <CardHeader className="flex gap-3">
           <RiQuestionAnswerFill className="w-10 h-10" />
           <div className="flex">
-            <p className="text-md">{question}</p>
+            <p className="text-md">
+              {question}
+              {type === "checkbox" ? " (多選)" : null}
+            </p>
           </div>
         </CardHeader>
       </Skeleton>

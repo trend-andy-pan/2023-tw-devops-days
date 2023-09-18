@@ -3,10 +3,11 @@ import { ScrollShadow } from "@nextui-org/react";
 
 import QuestionnairesContext from "../../../../context/questionnaires";
 import QuestionCard from "./QuestionCard";
+import PersonalCard from "./PersonalCard";
 
 export default function Questionnaires() {
   const {
-    ctxValue: { step, maxStep },
+    ctxValue: { step, maxStep, loading },
   } = useContext(QuestionnairesContext);
 
   return (
@@ -22,6 +23,10 @@ export default function Questionnaires() {
         {[...Array(maxStep + 1)].map((_e, i) => (
           <QuestionCard key={`QuestionCard-${i}`} step={i} />
         ))}
+
+        {step === maxStep && !loading ? (
+          <PersonalCard key="PersonalCard" />
+        ) : null}
       </div>
     </ScrollShadow>
   );

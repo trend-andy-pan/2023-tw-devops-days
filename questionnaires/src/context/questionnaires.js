@@ -30,8 +30,16 @@ export const QuestionnairesProvider = ({ children }) => {
     dispatch(questionnairesActions.setLoading(loading));
   }, []);
 
-  const setReactForm = useCallback((reactForm) => {
-    dispatch(questionnairesActions.setReactForm(reactForm));
+  const setQuestionsForm = useCallback((questionsForm) => {
+    dispatch(questionnairesActions.setQuestionsForm(questionsForm));
+  }, []);
+
+  const setPersonalForm = useCallback((personalForm) => {
+    dispatch(questionnairesActions.setPersonalForm(personalForm));
+  }, []);
+
+  const setFormId = useCallback((id) => {
+    dispatch(questionnairesActions.setFormId(id));
   }, []);
 
   const resetToDefault = useCallback(() => {
@@ -45,7 +53,9 @@ export const QuestionnairesProvider = ({ children }) => {
     setQuestions,
     setKey,
     setLoading,
-    setReactForm,
+    setQuestionsForm,
+    setPersonalForm,
+    setFormId,
     resetToDefault,
   };
 

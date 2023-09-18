@@ -9,7 +9,7 @@ export const QuestionCheckboxOthers = ({ step, name, radioCheckboxRef }) => {
 
   const {
     ctxValue: {
-      reactForm: { setValue, getValues },
+      questionsForm: { setValue, getValues },
     },
   } = useContext(QuestionnairesContext);
 
