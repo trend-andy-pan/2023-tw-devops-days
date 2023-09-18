@@ -9,7 +9,7 @@ export const QuestionRadioOthers = ({ step, name, radioOthersRef }) => {
 
   const {
     ctxValue: {
-      reactForm: { setValue },
+      questionsForm: { setValue },
     },
   } = useContext(QuestionnairesContext);
 

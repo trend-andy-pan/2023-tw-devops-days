@@ -11,6 +11,13 @@ module.exports = {
       flex: {
         0: "0 0 auto",
       },
+      backgroundImage: {
+        "personal-map":
+          "url('https://nextui-docs-v2.vercel.app/images/album-cover.png')",
+      },
+      height: {
+        "half-screen": "50vh",
+      },
     },
   },
   darkMode: "class",

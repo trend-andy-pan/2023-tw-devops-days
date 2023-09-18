@@ -1,6 +1,7 @@
 import React, { useCallback, useContext, useEffect } from "react";
 import axios from "axios";
 import yaml from "yaml";
+import { v4 as uuidV4 } from "uuid";
 
 import QuestionnairesContext from "../../context/questionnaires";
 import App from "./App";
@@ -8,9 +9,8 @@ import App from "./App";
 import "../../assets/index.css";
 
 export default function Main() {
-  const { setQuestions, setMaxStep, setLoading, setKey } = useContext(
-    QuestionnairesContext
-  );
+  const { setQuestions, setMaxStep, setLoading, setKey, setFormId } =
+    useContext(QuestionnairesContext);
 
   const fetchData = useCallback(async () => {
     setLoading(true);
@@ -21,13 +21,14 @@ export default function Main() {
     const result = yaml.parse(response.data);
     setKey(result.title);
     setQuestions(result.questionnaires);
-    setMaxStep(result.questionnaires.length - 1);
+    setMaxStep(result.questionnaires.length - 1 + 1); // include personal card
     setLoading(false);
   }, [setQuestions, setMaxStep, setLoading, setKey]);
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+    setFormId(uuidV4());
+  }, [fetchData, setFormId]);
 
   return (
     <main className="flex flex-col h-screen px-8">

@@ -35,9 +35,23 @@ export const setLoading = (payload) => {
   };
 };
 
-export const setReactForm = (payload) => {
+export const setQuestionsForm = (payload) => {
   return {
-    type: actionType.SET_REACT_FORM,
+    type: actionType.SET_QUESTIONS_FORM,
+    payload,
+  };
+};
+
+export const setPersonalForm = (payload) => {
+  return {
+    type: actionType.SET_PERSONAL_FORM,
+    payload,
+  };
+};
+
+export const setFormId = (payload) => {
+  return {
+    type: actionType.SET_FORM_ID,
     payload,
   };
 };
