@@ -3,6 +3,7 @@ name: devops-days
 
 services:
   grafana:
+    env_file: .env
     container_name: devops-days_grafana
     networks:
       - LAN
@@ -10,10 +11,12 @@ services:
     ports:
       - 80:3000
     volumes:
-      - ./grafana/plugins:/var/lib/grafana/plugins
+      - ./grafana/plugins/magnesium-wordcloud-panel:/var/lib/grafana/plugins/magnesium-wordcloud-panel
       - ./grafana/lib/mongodb-grafana-master/dist:/var/lib/grafana/plugins/mongodb
       - ./grafana/grafana.ini:/etc/grafana/grafana.ini
-      - ./grafana/storage:/var/lib/grafana
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
 
   grafana-mongodb-proxy:
     container_name: devops-days_grafana-mongodb-proxy
