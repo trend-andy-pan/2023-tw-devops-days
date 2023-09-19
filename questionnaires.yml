@@ -9,6 +9,16 @@ questionnaires:
   #     - 答案3
   #     - 答案4
 
+  - question: 你的工作性質屬於？
+    type: radio
+    otherAnswer: true
+    answers:
+      - SRE
+      - DevOps
+      - Backend Developer
+      - Frontend Developer
+      - Full Stack Developer
+      - QA
   - question: DevOps 的經驗
     type: radio
     otherAnswer: false
@@ -17,15 +27,6 @@ questionnaires:
       - 1~3年
       - 3~4年
       - 5年以上
-
-  - question: 你的工作性質屬於？
-    type: radio
-    otherAnswer: true
-    answers:
-      - SRE
-      - DevOps
-      - Backend Developer
-
   - question: 團隊使用的程式語言？
     type: checkbox
     otherAnswer: true
@@ -33,3 +34,123 @@ questionnaires:
       - Python
       - Go
       - Javascript
+      - Node.js
+      - .Net
+      - C/C++
+      - Java
+      - PHP
+  - question: 是否有接觸過網絡協議的相關經驗？
+    type: radio
+    otherAnswer: false
+    answers:
+      - 剛入門
+      - 已上手
+      - 熟門熟路
+      - 這個世界好難懂
+  - question: 目前使用的版本控制服務?
+    type: checkbox
+    otherAnswer: true
+    answers:
+      - Github
+      - Gitlab
+  - question: 目前使用的專案管理工具?
+    type: checkbox
+    otherAnswer: true
+    answers:
+      - Jira
+      - Jarvis Wiki (Confluence)
+      - Clickup
+      - Trello
+      - 無
+
+  - question: 開發過的專案中，自動化測試有包含什麼項目呢？
+    type: checkbox
+    otherAnswer: true
+    answers:
+      - Unit testing
+      - Api testing
+      - End-to-end testing
+      - Integration testing
+      - Performance testing
+      - Static Code Analysis
+      - 無
+  - question: 使用的雲端服務?
+    type: checkbox
+    otherAnswer: true
+    answers:
+      - AWS
+      - Azure
+      - Google Cloud
+      - Oracle Cloud
+      - Alibaba Cloud
+      - IBM Cloud
+      - 無
+  - question: 使用中的基礎設施的架構?
+    type: checkbox
+    otherAnswer: true
+    answers:
+      - Bare Metal (實體主機)
+      - Virtual Machines
+      - Containers
+      - Serverless
+  - question: 使用中的基礎設施部署工具
+    type: checkbox
+    otherAnswer: true
+    answers:
+      - AWS CDK
+      - CloudFormation
+      - Terraform
+      - Serverless
+      - 無
+  - question: 是否使用過 Secret management 管理密碼、API 密鑰和其他機密資訊的經驗？
+    type: radio
+    otherAnswer: false
+    answers:
+      - "Yes"
+      - "No"
+  - question: 使用的配置管理工具?
+    type: checkbox
+    otherAnswer: true
+    answers:
+      - Ansible
+      - Chef
+      - Puppet
+      - 無
+  - question: 使用的 CI/CD 工具?
+    type: checkbox
+    otherAnswer: true
+    answers:
+      - Github Actions
+      - Gitlab CI
+      - Jenkins
+      - Circle CI
+      - Travis CI
+      - Azure DevOps Services
+      - 無
+  - question: 使用的容器化管理工具?
+    type: checkbox
+    otherAnswer: true
+    answers:
+      - Kubernetes
+      - Docker Swarm/Compose
+      - GKE/ EKS /AKS
+      - AWS ECS
+      - 無
+  - question: 使用過的系統監控軟體?
+    type: checkbox
+    otherAnswer: true
+    answers:
+      - Grafana
+      - Datadog
+      - Prometheus
+      - Icinga
+      - 無
+  - question: 使用過的 Logs 管理工具?
+    type: checkbox
+    otherAnswer: true
+    answers:
+      - Elastic Stack
+      - Loki
+      - Graylog
+      - CloudWatch
+      - 無
