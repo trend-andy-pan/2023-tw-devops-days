@@ -10,7 +10,7 @@ questionnaires:
   #     - 答案4
 
 - question: 你的工作性質屬於？
-  type: checkbox
+  type: radio
   otherAnswer: true
   answers:
     - SRE
@@ -18,7 +18,7 @@ questionnaires:
     - Backend Developer
     - Frontend Developer
     - Full Stack Developer
-    - QA  
+    - QA
 - question: DevOps 的經驗
   type: radio
   otherAnswer: false
@@ -58,7 +58,7 @@ questionnaires:
   otherAnswer: true
   answers:
     - Jira
-    - Jarvis Wiki
+    - Jarvis Wiki (Confluence)
     - Clickup
     - Trello
     - 無
