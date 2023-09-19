@@ -43,10 +43,12 @@ export default function App() {
   }, [setQuestionsForm, questionsForm, setPersonalForm, personalForm]);
 
   const handleNext = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setStep(step + 1);
   };
 
   const handlePrev = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setStep(step - 1);
   };
 
