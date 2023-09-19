@@ -21,6 +21,8 @@ import QuestionnairesContext from "../../../../../context/questionnaires";
 export default function PersonalCard() {
   const {
     ctxValue: {
+      step,
+      maxStep,
       personalForm: { control },
     },
   } = useContext(QuestionnairesContext);
@@ -127,7 +129,7 @@ export default function PersonalCard() {
     );
   };
   return (
-    <Card className="flex-0 w-full">
+    <Card className={`flex-0 w-full ${step !== maxStep ? "h-0" : ""}`}>
       <div className="h-half-screen w-full bg-personal-map bg-no-repeat bg-fixed bg-center bg-cover" />
       <Divider />
       <CardBody>
