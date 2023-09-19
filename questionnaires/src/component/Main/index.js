@@ -31,7 +31,7 @@ export default function Main() {
   }, [fetchData, setFormId]);
 
   return (
-    <main className="flex flex-col h-screen px-8">
+    <main className="flex flex-col h-screen max-md:px-1 px-8">
       <App />
     </main>
   );

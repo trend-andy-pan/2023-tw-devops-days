@@ -16,6 +16,7 @@ import QuestionnairesContext from "../../../context/questionnaires";
 import Questionnaires from "./Questionnaires";
 
 import logoImg from "../../../assets/TrendMicroLogo.png";
+import "./index.css";
 
 export default function App() {
   const bearer =
@@ -148,24 +149,26 @@ export default function App() {
 
   return (
     <>
-      <Navbar className="flex">
-        <NavbarBrand className="flex-none max-w-[150px] fixed">
-          <Image width={150} alt="Trend Micro" src={logoImg} />
+      <Navbar className="flex max-md:px-3 navbar">
+        <NavbarBrand className="flex-none max-w-[150px]">
+          <div className="max-sm:w-[35px] max-sm:relative overflow-hidden logo-div">
+            <Image width={150} alt="Trend Micro" src={logoImg} />
+          </div>
         </NavbarBrand>
         <NavbarContent
           className="grow justify-end md:justify-center"
           justify="none"
         >
-          <h1 className="text-2xl font-bold text-inherit">
+          <h1 className="text-2xl max-md:text-base font-bold text-inherit">
             What's your DevOps Story?
           </h1>
         </NavbarContent>
       </Navbar>
-      <article className="flex-grow px-6 pt-6">
+      <article className="flex-grow px-6 pt-6 max-md:px-3 max-md:pt-3">
         <Questionnaires />
       </article>
       <footer className="px-6">
-        <div className="flex w-full justify-between py-6">
+        <div className="flex w-full justify-between py-6 max-md:py-3">
           <Button
             color="secondary"
             variant="ghost"
