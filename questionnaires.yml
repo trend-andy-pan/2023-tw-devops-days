@@ -27,7 +27,7 @@ questionnaires:
   - 1~3年
   - 3~4年
   - 5年以上
-- question: 團隊使用的程式語言？(可複選)
+- question: 團隊使用的程式語言？
   type: checkbox
   otherAnswer: true
   answers:
@@ -47,13 +47,13 @@ questionnaires:
     - 已上手
     - 熟門熟路
     - 這個世界好難懂
-- question: 目前使用的版本控制服務? (可複選)
+- question: 目前使用的版本控制服務?
   type: checkbox
   otherAnswer: true
   answers:
     - Github
     - Gitlab
-- question: 目前使用的專案管理工具? (可複選)
+- question: 目前使用的專案管理工具?
   type: checkbox
   otherAnswer: true
   answers:
@@ -63,7 +63,7 @@ questionnaires:
     - Trello
     - 無
   
-- question: 開發過的專案中，自動化測試有包含什麼項目呢？(可複選)
+- question: 開發過的專案中，自動化測試有包含什麼項目呢？
   type: checkbox
   otherAnswer: true
   answers:
@@ -74,7 +74,7 @@ questionnaires:
     - Performance testing
     - Static Code Analysis
     - 無
-- question: 使用的雲端服務? (可複選)
+- question: 使用的雲端服務?
   type: checkbox
   otherAnswer: true
   answers:
@@ -85,7 +85,7 @@ questionnaires:
     - Alibaba Cloud
     - IBM Cloud
     - 無
-- question: 使用中的基礎設施的架構? (可複選)
+- question: 使用中的基礎設施的架構?
   type: checkbox
   otherAnswer: true
   answers:
@@ -93,7 +93,7 @@ questionnaires:
     - Virtual Machines
     - Containers
     - Serverless
-- question: 使用中的基礎設施部署工具 (可複選)
+- question: 使用中的基礎設施部署工具
   type: checkbox
   otherAnswer: true
   answers:
@@ -108,7 +108,7 @@ questionnaires:
   answers:
     - 'Yes'
     - 'No'
-- question: 使用的配置管理工具? (可複選)
+- question: 使用的配置管理工具?
   type: checkbox
   otherAnswer: true
   answers:
@@ -116,7 +116,7 @@ questionnaires:
     - Chef
     - Puppet
     - 無
-- question: 使用的 CI/CD 工具? (可複選)
+- question: 使用的 CI/CD 工具?
   type: checkbox
   otherAnswer: true
   answers:
@@ -127,7 +127,7 @@ questionnaires:
     - Travis CI
     - Azure DevOps Services
     - 無
-- question: 使用的容器化管理工具? (可複選)
+- question: 使用的容器化管理工具?
   type: checkbox
   otherAnswer: true
   answers:
@@ -136,7 +136,7 @@ questionnaires:
     - GKE/ EKS /AKS
     - AWS ECS
     - 無
-- question: 使用過的系統監控軟體? (可複選)
+- question: 使用過的系統監控軟體?
   type: checkbox
   otherAnswer: true
   answers:
@@ -145,7 +145,7 @@ questionnaires:
     - Prometheus
     - Icinga
     - 無
-- question: 使用過的 Logs 管理工具? (可複選)
+- question: 使用過的 Logs 管理工具?
   type: checkbox
   otherAnswer: true
   answers:
