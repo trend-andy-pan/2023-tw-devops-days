@@ -29,7 +29,7 @@ services:
       - -c
       - |
         cd mongodb_grafana
-        npm run server
+        npm i && npm run server
 
 networks:
   LAN:

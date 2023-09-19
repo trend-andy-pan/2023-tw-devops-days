@@ -72,3 +72,24 @@ If you have any suggestions, please get in touch with us. Thank you!
    ```
 
 9. Enjoy!
+
+## How to run grafana on your local
+
+1. Run server via docker-composer
+
+   ```
+   docker-compose up -d --remove-orphans
+   ```
+
+2. Using default account to login
+
+   ```
+   admin
+   admin
+   ```
+
+3. Setting resource path
+
+4. Go to dashboard
+
+5. Enjoy!
