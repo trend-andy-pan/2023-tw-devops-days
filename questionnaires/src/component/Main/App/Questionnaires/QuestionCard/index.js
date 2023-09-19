@@ -26,6 +26,7 @@ export default function QuestionCard({ step }) {
     ctxValue: {
       questions,
       loading,
+      step: currentStep,
       questionsForm: { control },
     },
   } = useContext(QuestionnairesContext);
@@ -135,8 +136,8 @@ export default function QuestionCard({ step }) {
   };
 
   return (
-    <Card className="flex-0 w-full">
-      <Skeleton isLoaded={!loading} className="rounded-lg">
+    <Card className={`flex-0 w-full ${currentStep !== step ? "h-0" : ""}`}>
+      <Skeleton isLoaded={!loading} className="rounded-lg rounded-b-none">
         <CardHeader className="flex gap-3">
           <RiQuestionAnswerFill className="w-10 h-10" />
           <div className="flex">
@@ -148,7 +149,10 @@ export default function QuestionCard({ step }) {
         </CardHeader>
       </Skeleton>
       <Divider />
-      <Skeleton isLoaded={!loading} className="rounded-lg h-full">
+      <Skeleton
+        isLoaded={!loading}
+        className="rounded-lg h-full rounded-t-none"
+      >
         <Controller
           name={`question-${step}`}
           control={control}

@@ -12,11 +12,13 @@ module.exports = {
         0: "0 0 auto",
       },
       backgroundImage: {
-        "personal-map":
-          "url('https://nextui-docs-v2.vercel.app/images/album-cover.png')",
+        "personal-map": "url('./devopsRoadmap.svg')",
       },
       height: {
         "half-screen": "50vh",
+      },
+      backgroundPosition: {
+        "top-20": "center top -5rem",
       },
     },
   },

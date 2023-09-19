@@ -24,9 +24,7 @@ export default function Questionnaires() {
           <QuestionCard key={`QuestionCard-${i}`} step={i} />
         ))}
 
-        {step === maxStep && !loading ? (
-          <PersonalCard key="PersonalCard" />
-        ) : null}
+        {loading ? null : <PersonalCard key="PersonalCard" />}
       </div>
     </ScrollShadow>
   );
