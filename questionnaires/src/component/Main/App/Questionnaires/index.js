@@ -4,12 +4,14 @@ import { ScrollShadow } from "@nextui-org/react";
 import QuestionnairesContext from "../../../../context/questionnaires";
 import QuestionCard from "./QuestionCard";
 import PersonalCard from "./PersonalCard";
+import HelpCard from "./HelpCard";
 
 export default function Questionnaires() {
   const {
-    ctxValue: { step, maxStep, loading },
+    ctxValue: { step, questions, loading },
   } = useContext(QuestionnairesContext);
 
+  let index = -1;
   return (
     <ScrollShadow
       orientation="horizontal"
@@ -20,11 +22,23 @@ export default function Questionnaires() {
         className="flex flex-nowrap flex-row w-full h-full gap-6 !duration-500 questionnaires"
         style={{ transform: `translateX(calc((-100% - 1.5rem) * ${step}))` }}
       >
-        {[...Array(maxStep + 1)].map((_e, i) => (
-          <QuestionCard key={`QuestionCard-${i}`} step={i} />
-        ))}
-
-        {loading ? null : <PersonalCard key="PersonalCard" />}
+        {questions.map((question, i) => {
+          return (
+            <React.Fragment key={`Question-${i}`}>
+              <QuestionCard
+                key={`QuestionCard-${i}`}
+                index={i}
+                step={(index += 1)}
+              />
+              {question.help && (
+                <HelpCard key={`HelpCard-${i}`} index={i} step={(index += 1)} />
+              )}
+            </React.Fragment>
+          );
+        })}
+        {loading ? null : (
+          <PersonalCard key="PersonalCard" step={(index += 1)} />
+        )}
       </div>
     </ScrollShadow>
   );

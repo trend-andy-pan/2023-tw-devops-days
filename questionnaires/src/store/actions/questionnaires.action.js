@@ -28,6 +28,13 @@ export const setKey = (payload) => {
   };
 };
 
+export const setQuestionNo = (payload) => {
+  return {
+    type: actionType.SET_QUESTION_NO,
+    payload,
+  };
+};
+
 export const setLoading = (payload) => {
   return {
     type: actionType.SET_LOADING,

@@ -2,6 +2,7 @@ export const SET_STEP = "SET_STEP";
 export const SET_MAX_STEP = "SET_MAX_STEP";
 export const SET_QUESTIONS = "SET_QUESTIONS";
 export const SET_KEY = "SET_KEY";
+export const SET_QUESTION_NO = "SET_QUESTION_NO";
 
 export const SET_LOADING = "SET_LOADING";
 export const SET_QUESTIONS_FORM = "SET_QUESTIONS_FORM";

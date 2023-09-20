@@ -25,7 +25,7 @@ export default function App() {
   const [submitLoading, setSubmitLoading] = useState(false);
 
   const {
-    ctxValue: { step, maxStep, key, formId, loading },
+    ctxValue: { step, maxStep, key, formId, loading, questions, questionNo },
     setStep,
     setQuestionsForm,
     setPersonalForm,
@@ -170,15 +170,21 @@ export default function App() {
         <Questionnaires />
       </article>
       <footer className="px-6">
-        <div className="flex w-full justify-between py-6 max-md:py-3">
-          <Button
-            color="secondary"
-            variant="ghost"
-            isDisabled={step <= 0}
-            onClick={() => handlePrev()}
-          >
-            上一題
-          </Button>
+        <div
+          className={`flex w-full ${
+            step !== maxStep ? "justify-between" : "justify-end"
+          } py-6 max-md:py-3`}
+        >
+          {step !== maxStep ? (
+            <Button
+              color="secondary"
+              variant="ghost"
+              isDisabled={step <= 0}
+              onClick={() => handlePrev()}
+            >
+              上一題
+            </Button>
+          ) : null}
           {loading ? (
             <Button color="primary" variant="ghost" isDisabled isLoading>
               下一題
@@ -189,10 +195,10 @@ export default function App() {
         </div>
         <Progress
           size="md"
-          value={step}
+          value={questionNo}
           label={<></>}
-          valueLabel={`${step + 1} / ${maxStep + 1}`}
-          maxValue={maxStep}
+          valueLabel={`${questionNo} / ${questions.length}`}
+          maxValue={questions.length}
           color="success"
           showValueLabel={true}
           className="w-full pb-4"

@@ -9,8 +9,9 @@ import App from "./App";
 import "../../assets/index.css";
 
 export default function Main() {
-  const { setQuestions, setMaxStep, setLoading, setKey, setFormId } =
-    useContext(QuestionnairesContext);
+  const { setQuestions, setLoading, setKey, setFormId } = useContext(
+    QuestionnairesContext
+  );
 
   const fetchData = useCallback(async () => {
     setLoading(true);
@@ -21,9 +22,8 @@ export default function Main() {
     const result = yaml.parse(response.data);
     setKey(result.title);
     setQuestions(result.questionnaires);
-    setMaxStep(result.questionnaires.length - 1 + 1); // include personal card
     setLoading(false);
-  }, [setQuestions, setMaxStep, setLoading, setKey]);
+  }, [setQuestions, setLoading, setKey]);
 
   useEffect(() => {
     fetchData();
