@@ -11,6 +11,7 @@ export const initialState = {
   questionsForm: {},
   personalForm: {},
   formId: "",
+  questionNo: 0,
 };
 
 const azurePageReducer = (state, action) => {
@@ -34,6 +35,11 @@ const azurePageReducer = (state, action) => {
       return {
         ...state,
         key: action.payload,
+      };
+    case actionType.SET_QUESTION_NO:
+      return {
+        ...state,
+        questionNo: action.payload,
       };
     case actionType.SET_LOADING:
       return {

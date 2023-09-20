@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import {
   Card,
   CardBody,
@@ -18,14 +18,18 @@ import Terms from "./Terms";
 import Notice from "./Notice";
 import QuestionnairesContext from "../../../../../context/questionnaires";
 
-export default function PersonalCard() {
+export default function PersonalCard({ step }) {
   const {
     ctxValue: {
-      step,
-      maxStep,
+      step: currentStep,
       personalForm: { control },
     },
+    setMaxStep,
   } = useContext(QuestionnairesContext);
+
+  useEffect(() => {
+    setMaxStep(step);
+  }, [setMaxStep, step]);
 
   const renderForm = () => {
     if (!control) return null;
@@ -129,7 +133,7 @@ export default function PersonalCard() {
     );
   };
   return (
-    <Card className={`flex-0 w-full ${step !== maxStep ? "h-0" : ""}`}>
+    <Card className={`flex-0 w-full ${currentStep !== step ? "h-0" : ""}`}>
       <div className="h-half-screen w-full bg-personal-map bg-no-repeat bg-fixed bg-top-20 bg-cover bg-default-900">
         <div className="h-full bg-gradient-to-b from-transparent to-default-100" />
       </div>

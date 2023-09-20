@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import {
   Card,
   CardHeader,
@@ -19,7 +19,7 @@ import { QuestionCheckbox } from "./QuestionCheckbox";
 
 import "./index.css";
 
-export default function QuestionCard({ step }) {
+export default function QuestionCard({ step, index }) {
   const childRef = useRef();
 
   const {
@@ -29,14 +29,21 @@ export default function QuestionCard({ step }) {
       step: currentStep,
       questionsForm: { control },
     },
+    setQuestionNo,
   } = useContext(QuestionnairesContext);
+
+  useEffect(() => {
+    if (currentStep === step) {
+      setQuestionNo(index + 1);
+    }
+  }, [step, currentStep, setQuestionNo, index]);
 
   const {
     question = "",
     answers = [],
     type = "",
     otherAnswer = false,
-  } = questions[step] ?? {};
+  } = questions[index] ?? {};
 
   if (type === "") return null;
 
