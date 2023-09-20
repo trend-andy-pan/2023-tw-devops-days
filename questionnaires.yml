@@ -8,6 +8,9 @@ questionnaires:
   #     - 答案2
   #     - 答案3
   #     - 答案4
+  #   help: 說明
+  #     title: 標題
+  #     description: 內容
 
   - question: 你的工作性質屬於？
     type: radio
@@ -19,6 +22,11 @@ questionnaires:
       - Frontend Developer
       - Full Stack Developer
       - QA
+    help:
+      title: 你知道嗎
+      description: |
+        趨勢人中，後端開發者 (Backend Developer) 是最主要的工作性質，佔了約 31.93%。DevOps 和 全端開發者 (Full Stack Developer) 也佔有一定比例，分別為 19.33% 和 11.76%。還有其他工作性質，但佔比較少。
+
   - question: DevOps 的經驗
     type: radio
     otherAnswer: false
