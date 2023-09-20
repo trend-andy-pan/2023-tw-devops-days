@@ -35,6 +35,10 @@ questionnaires:
       - 1~3年
       - 3~4年
       - 5年以上
+    help:
+      title: 你知道嗎
+      description: |
+        趨勢人中，有 1~3年 DevOps 經驗的人最多，佔 37.82%。接著是 未滿一年 的答題者，佔 34.45%。 有 3~4年 經驗的答題者佔 16.81%。
   - question: 團隊使用的程式語言？
     type: checkbox
     otherAnswer: true
@@ -47,6 +51,10 @@ questionnaires:
       - C/C++
       - Java
       - PHP
+    help:
+      title: 你知道嗎
+      description: |
+        趨勢人中，Python 是最受歡迎的程式語言，約 26.05% 的答題者的團隊使用它。 其他受歡迎的程式語言包括 Go (10.53%)、Javascript (8.42%) 和 Java (6.32%)。 Node.js 和 C/C++ 也有一定的使用率，分別為 5.26% 和 5.00%。  
   - question: 是否有接觸過網絡協議的相關經驗？
     type: radio
     otherAnswer: false
@@ -55,12 +63,20 @@ questionnaires:
       - 已上手
       - 熟門熟路
       - 這個世界好難懂
+    help:
+      title: 你知道嗎
+      description: |
+        趨勢人中，剛入門 的答題者最多，佔 38.66%。 這個世界好難懂 的答題者佔 28.57%。 已上手 的答題者佔 26.89%。 熟門熟路 的答題者佔 5.88% 這表示網路協議相關的任務主要集中在特定的團隊。
   - question: 目前使用的版本控制服務?
     type: checkbox
     otherAnswer: true
     answers:
       - Github
       - Gitlab
+    help:
+      title: 你知道嗎
+      description: |
+        Github 是最受歡迎的版本控制服務，約 45.17% 的趨勢人使用它。
   - question: 目前使用的專案管理工具?
     type: checkbox
     otherAnswer: true
@@ -70,7 +86,10 @@ questionnaires:
       - Clickup
       - Trello
       - 無
-
+    help:
+      title: 你知道嗎
+      description: |
+        Jira 是最受歡迎的專案管理工具，約 34.66% 的趨勢人使用它。 Jarvis Wiki (Confluence) 佔 26.38%。 Trello 的使用率較低，僅佔 1.84%。
   - question: 開發過的專案中，自動化測試有包含什麼項目呢？
     type: checkbox
     otherAnswer: true
@@ -82,6 +101,10 @@ questionnaires:
       - Performance testing
       - Static Code Analysis
       - 無
+    help: 
+      title: 你知道嗎
+      description: |
+        單元測試 (Unit testing) 是最常見的自動化測試類型，佔 18.55%。 端到端測試 (End-to-end testing) 佔 14.11%。 整合測試 (Integration testing) 佔 13.10%。 API 測試 (Api testing) 佔 12.30%。 靜態代碼分析 (Static Code Analysis) 佔 9.88%。 效能測試 (Performance testing) 佔 6.05%。
   - question: 使用的雲端服務?
     type: checkbox
     otherAnswer: true
@@ -110,12 +133,20 @@ questionnaires:
       - Terraform
       - Serverless
       - 無
+    help:
+      title: 你知道嗎
+      description: |
+        Terraform 是最受歡迎的基礎設施部署工具，佔 20.24%。 Serverless 佔 14.50%。 CloudFormation 佔 13.60%。 AWS CDK 佔 6.95%。
   - question: 是否使用過 Secret management 管理密碼、API 密鑰和其他機密資訊的經驗？
     type: radio
     otherAnswer: false
     answers:
       - "Yes"
       - "No"
+    help:
+      title: 你知道嗎
+      description: |
+        趨勢人中，75.63% 的答題者表示他們有使用過 Secret management。 這意味著大多數的趨勢團隊都有導入 Secret management 的工具。
   - question: 使用的配置管理工具?
     type: checkbox
     otherAnswer: true
@@ -135,6 +166,10 @@ questionnaires:
       - Travis CI
       - Azure DevOps Services
       - 無
+    help:
+      title: 你知道嗎
+      description: |
+        Github Actions 是最受歡迎的 CI/CD 工具，佔 30.56%。 Jenkins 佔 22.84%。Azure DevOps Services 佔 3.09%。
   - question: 使用的容器化管理工具?
     type: checkbox
     otherAnswer: true
@@ -144,6 +179,10 @@ questionnaires:
       - GKE/ EKS /AKS
       - AWS ECS
       - 無
+    help:
+      title: 你知道嗎
+      description: |
+        Kubernetes 是最受歡迎的容器化管理工具，佔 17.58%。 AWS ECS 佔 16.14%。 GKE / EKS / AKS 佔 14.12%。 Docker Swarm/Compose 佔 12.39%。
   - question: 使用過的系統監控軟體?
     type: checkbox
     otherAnswer: true
@@ -153,6 +192,10 @@ questionnaires:
       - Prometheus
       - Icinga
       - 無
+    help: 
+      title: 你知道嗎
+      description: |
+        Grafana 是最受歡迎的系統監控軟體，佔 29.94%。 Prometheus 佔 17.83%。 Icinga 佔 5.41%。
   - question: 使用過的 Logs 管理工具?
     type: checkbox
     otherAnswer: true
@@ -162,3 +205,7 @@ questionnaires:
       - Graylog
       - CloudWatch
       - 無
+    help: 
+      title: 你知道嗎
+      description: |
+        CloudWatch 是最受歡迎的 Logs 管理工具，佔 27.33%。 Elastic Stack 佔 13.00%。 Graylog 佔 6.67%。
