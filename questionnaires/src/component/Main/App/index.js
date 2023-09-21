@@ -119,6 +119,7 @@ export default function App() {
 
   const handleSubmit = () => {
     postPersonalInfo();
+    onModalOpen();
   };
 
   const renderNextButton = () => {
@@ -192,9 +193,6 @@ export default function App() {
               上一題
             </Button>
           ) : null}
-          <Button color="secondary" variant="ghost" onClick={onModalOpen}>
-            測試
-          </Button>
           {loading ? (
             <Button color="primary" variant="shadow" isDisabled isLoading>
               下一題
