@@ -6,7 +6,7 @@ const DevopsRoadmap = ({ answers }) => {
   const unSelectBgColor = "#9CA3AF";
   const unSelectTextColor = "#000000";
 
-  const isSeceted = (answerNo, value, type) => {
+  const isSelected = (answerNo, value, type) => {
     const selectColor = type === "text" ? selectTextColor : selectBgColor;
     const unSelectColor = type === "text" ? unSelectTextColor : unSelectBgColor;
 
@@ -408,7 +408,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_128"
               strokeWidth="2.7"
-              fill={isSeceted(2, ".Net", "bg")}
+              fill={isSelected(2, ".Net", "bg")}
               rx="2"
               height="44.3"
               width="98.3"
@@ -424,7 +424,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_82"
               y="333.5"
               x="1125.07732"
-              fill={isSeceted(2, ".Net", "text")}
+              fill={isSelected(2, ".Net", "text")}
               stroke="null"
               transform="matrix(0.970385 0 0 1 34.2749 1)"
             >
@@ -440,7 +440,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_137"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(2, "Python", "bg")}
+              fill={isSelected(2, "Python", "bg")}
               rx="2"
               height="44.3"
               width="94.3"
@@ -452,7 +452,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(2, "Python", "text")}
+              fill={isSelected(2, "Python", "text")}
               y="334.671"
               x="1013"
             >
@@ -468,7 +468,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_146"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(2, "JavaScript", "bg")}
+              fill={isSelected(2, "JavaScript", "bg")}
               rx="2"
               height="44.3"
               width="204.3"
@@ -480,7 +480,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(2, "JavaScript", "text")}
+              fill={isSelected(2, "JavaScript", "text")}
               y="435.739"
               x="1013"
             >
@@ -496,7 +496,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_155"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(2, "Go", "bg")}
+              fill={isSelected(2, "Go", "bg")}
               rx="2"
               height="44.3"
               width="94.3"
@@ -509,7 +509,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(2, "Go", "text")}
+              fill={isSelected(2, "Go", "text")}
               y="384.6795"
               x="1027"
             >
@@ -527,7 +527,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_163"
               strokeWidth="2.7"
-              fill={isSeceted(2, "C/C++", "bg")}
+              fill={isSelected(2, "C/C++", "bg")}
               rx="2"
               height="44.3"
               width="99.3"
@@ -536,7 +536,7 @@ const DevopsRoadmap = ({ answers }) => {
               stroke="rgb(0,0,0)"
             />
             <text
-              fill={isSeceted(2, "C/C++", "text")}
+              fill={isSelected(2, "C/C++", "text")}
               strokeWidth="0"
               x="1123.73112"
               y="385.5"
@@ -576,7 +576,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_268"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(4, "GitHub", "bg")}
+              fill={isSelected(4, "GitHub", "bg")}
               rx="2"
               height="44.3"
               width="105.3"
@@ -588,7 +588,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(4, "GitHub", "text")}
+              fill={isSelected(4, "GitHub", "text")}
               y="805.6795"
               x="1228"
             >
@@ -604,7 +604,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_272"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(4, "GitLab", "bg")}
+              fill={isSelected(4, "GitLab", "bg")}
               rx="2"
               height="44.3"
               width="109.3"
@@ -616,7 +616,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(4, "GitLab", "text")}
+              fill={isSelected(4, "GitLab", "text")}
               y="856.6795"
               x="1229"
             >
@@ -632,7 +632,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_279"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(4, "Bitbucket", "bg")}
+              fill={isSelected(4, "Bitbucket", "bg")}
               rx="2"
               height="44.3"
               width="109.3"
@@ -644,7 +644,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(4, "Bitbucket", "text")}
+              fill={isSelected(4, "Bitbucket", "text")}
               y="907.637"
               x="1220"
             >
@@ -677,7 +677,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_405"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(14, "Grafana", "bg")}
+              fill={isSelected(14, "Grafana", "bg")}
               rx="2"
               height="44.3"
               width="127.3"
@@ -689,7 +689,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(14, "Grafana", "text")}
+              fill={isSelected(14, "Grafana", "text")}
               y="1769.6795"
               x="609"
             >
@@ -705,7 +705,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_413"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(14, "Datadog", "bg")}
+              fill={isSelected(14, "Datadog", "bg")}
               rx="2"
               height="44.3"
               width="127.3"
@@ -717,7 +717,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(14, "Datadog", "text")}
+              fill={isSelected(14, "Datadog", "text")}
               y="1768.6965"
               x="473"
             >
@@ -733,7 +733,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_422"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(14, "Icinga", "bg")}
+              fill={isSelected(14, "Icinga", "bg")}
               rx="2"
               height="44.3"
               width="126.3"
@@ -750,7 +750,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_431"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(14, "Prometheus", "bg")}
+              fill={isSelected(14, "Prometheus", "bg")}
               rx="2"
               height="44.3"
               width="127.3"
@@ -762,7 +762,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(14, "Prometheus", "text")}
+              fill={isSelected(14, "Prometheus", "text")}
               y="1917.671"
               x="592"
             >
@@ -797,7 +797,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_509"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(7, "AWS", "bg")}
+              fill={isSelected(7, "AWS", "bg")}
               rx="2"
               height="43.3"
               width="138.3"
@@ -809,7 +809,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(7, "AWS", "text")}
+              fill={isSelected(7, "AWS", "text")}
               y="828.688"
               x="483"
             >
@@ -825,7 +825,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_517"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(7, "Google Cloud", "bg")}
+              fill={isSelected(7, "Google Cloud", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -837,7 +837,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(7, "Google Cloud", "text")}
+              fill={isSelected(7, "Google Cloud", "text")}
               y="830.6795"
               x="597"
             >
@@ -853,7 +853,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_526"
               strokeWidth="2.7"
-              fill={isSeceted(7, "Azure", "bg")}
+              fill={isSelected(7, "Azure", "bg")}
               rx="2"
               height="44.3"
               width="140.3"
@@ -866,7 +866,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(7, "Azure", "text")}
+              fill={isSelected(7, "Azure", "text")}
               y="879.688"
               x="481.26586"
               stroke="null"
@@ -886,7 +886,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_535"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(7, "Alibaba Cloud", "bg")}
+              fill={isSelected(7, "Alibaba Cloud", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -903,7 +903,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_543"
               strokeWidth="2.7"
-              fill={isSeceted(5, "ClickUp", "bg")}
+              fill={isSelected(5, "ClickUp", "bg")}
               rx="2"
               height="43.3"
               width="77.29999"
@@ -921,7 +921,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_552"
               strokeWidth="2.7"
-              fill={isSeceted(5, "Jarvis Wiki (Confluence)", "bg")}
+              fill={isSelected(5, "Jarvis Wiki (Confluence)", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -940,7 +940,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_561"
               strokeWidth="2.7"
-              fill={isSeceted(5, "Trello", "bg")}
+              fill={isSelected(5, "Trello", "bg")}
               rx="2"
               height="44.3"
               width="63.30003"
@@ -958,7 +958,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_570"
               strokeWidth="2.7"
-              fill={isSeceted(5, "Jira", "bg")}
+              fill={isSelected(5, "Jira", "bg")}
               rx="2"
               height="43.3"
               width="60.29999"
@@ -987,7 +987,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_587"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(11, "Ansible", "bg")}
+              fill={isSelected(11, "Ansible", "bg")}
               rx="2"
               height="44.3"
               width="151.3"
@@ -999,7 +999,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(11, "Ansible", "text")}
+              fill={isSelected(11, "Ansible", "text")}
               y="1220.688"
               x="804"
             >
@@ -1015,7 +1015,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_591"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(11, "Chef", "bg")}
+              fill={isSelected(11, "Chef", "bg")}
               rx="2"
               height="44.3"
               width="151.3"
@@ -1027,7 +1027,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(11, "Chef", "text")}
+              fill={isSelected(11, "Chef", "text")}
               y="1270.6625"
               x="814"
             >
@@ -1043,7 +1043,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_595"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(11, "Puppet", "bg")}
+              fill={isSelected(11, "Puppet", "bg")}
               rx="2"
               height="44.3"
               width="151.3"
@@ -1055,7 +1055,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(11, "Puppet", "text")}
+              fill={isSelected(11, "Puppet", "text")}
               y="1320.671"
               x="805"
             >
@@ -1071,7 +1071,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_618"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(15, "Elastic Stack", "bg")}
+              fill={isSelected(15, "Elastic Stack", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -1083,7 +1083,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(15, "Elastic Stack", "text")}
+              fill={isSelected(15, "Elastic Stack", "text")}
               y="1766.6625"
               x="910"
             >
@@ -1099,7 +1099,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_626"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(15, "CloudWatch", "bg")}
+              fill={isSelected(15, "CloudWatch", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -1116,7 +1116,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_635"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(15, "Graylog", "bg")}
+              fill={isSelected(15, "Graylog", "bg")}
               rx="2"
               height="44.3"
               width="83.3"
@@ -1133,7 +1133,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_653"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(15, "Loki", "bg")}
+              fill={isSelected(15, "Loki", "bg")}
               rx="2"
               height="44.3"
               width="85.3"
@@ -1145,7 +1145,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(15, "Loki", "text")}
+              fill={isSelected(15, "Loki", "text")}
               y="1766.637"
               x="1063"
             >
@@ -1179,7 +1179,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_665"
               strokeWidth="2.7"
-              fill={isSeceted(13, "Docker Swarm / Compose", "bg")}
+              fill={isSelected(13, "Docker Swarm / Compose", "bg")}
               rx="2"
               height="43.3"
               width="216.29999"
@@ -1197,7 +1197,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_682"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(13, "GKE / EKS / AKS", "bg")}
+              fill={isSelected(13, "GKE / EKS / AKS", "bg")}
               rx="2"
               height="43.3"
               width="190.3"
@@ -1209,7 +1209,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(13, "GKE / EKS / AKS", "text")}
+              fill={isSelected(13, "GKE / EKS / AKS", "text")}
               y="1581.739"
               x="485"
             >
@@ -1225,7 +1225,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_691"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(13, "AWS ECS / Fargate", "bg")}
+              fill={isSelected(13, "AWS ECS / Fargate", "bg")}
               rx="2"
               height="43.3"
               width="190.3"
@@ -1237,7 +1237,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(13, "AWS ECS / Fargate", "text")}
+              fill={isSelected(13, "AWS ECS / Fargate", "text")}
               y="1630.739"
               x="471"
             >
@@ -1305,7 +1305,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_956"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(12, "Jenkins", "bg")}
+              fill={isSelected(12, "Jenkins", "bg")}
               rx="2"
               height="43.3"
               width="108.3"
@@ -1317,7 +1317,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(12, "Jenkins", "text")}
+              fill={isSelected(12, "Jenkins", "text")}
               y="1222.637"
               x="551"
             >
@@ -1333,7 +1333,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_964"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(12, "Gitlab CI", "bg")}
+              fill={isSelected(12, "Gitlab CI", "bg")}
               rx="2"
               height="43.3"
               width="150.3"
@@ -1345,7 +1345,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(12, "Gitlab CI", "text")}
+              fill={isSelected(12, "Gitlab CI", "text")}
               y="1222.6795"
               x="410"
             >
@@ -1361,7 +1361,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_972"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(12, "Travis CI", "bg")}
+              fill={isSelected(12, "Travis CI", "bg")}
               rx="2"
               height="43.3"
               width="108.3"
@@ -1373,7 +1373,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(12, "Travis CI", "text")}
+              fill={isSelected(12, "Travis CI", "text")}
               y="1271.637"
               x="545"
             >
@@ -1389,7 +1389,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_981"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(12, "GitHub Actions", "bg")}
+              fill={isSelected(12, "GitHub Actions", "bg")}
               rx="2"
               height="43.3"
               width="149.3"
@@ -1401,7 +1401,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(12, "GitHub Actions", "text")}
+              fill={isSelected(12, "GitHub Actions", "text")}
               y="1271.688"
               x="387"
             >
@@ -1417,7 +1417,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_998"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(12, "Circle CI", "bg")}
+              fill={isSelected(12, "Circle CI", "bg")}
               rx="2"
               height="44.3"
               width="149.3"
@@ -1429,7 +1429,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(12, "Circle CI", "text")}
+              fill={isSelected(12, "Circle CI", "text")}
               y="1322.637"
               x="410"
             >
@@ -1445,7 +1445,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_1006"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(12, "Others", "bg")}
+              fill={isSelected(12, "Others", "bg")}
               rx="2"
               height="44.3"
               width="109.3"
@@ -1462,7 +1462,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_1015"
               strokeWidth="2.7"
-              fill={isSeceted(12, "Azure DevOps Services", "bg")}
+              fill={isSelected(12, "Azure DevOps Services", "bg")}
               rx="2"
               height="44.3"
               width="266.3"
@@ -1475,7 +1475,7 @@ const DevopsRoadmap = ({ answers }) => {
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill={isSeceted(12, "Azure DevOps Services", "text")}
+              fill={isSelected(12, "Azure DevOps Services", "text")}
               y="1491.6965"
               x="416"
               stroke="null"
@@ -1584,7 +1584,7 @@ const DevopsRoadmap = ({ answers }) => {
           <rect
             id="svg_84"
             strokeWidth="2.7"
-            fill={isSeceted(2, "Java", "bg")}
+            fill={isSelected(2, "Java", "bg")}
             rx="2"
             height="44.3"
             width="94.77555"
@@ -1599,7 +1599,7 @@ const DevopsRoadmap = ({ answers }) => {
             id="svg_88"
             y="279.5"
             x="1020.32113"
-            fill={isSeceted(2, "Java", "text")}
+            fill={isSelected(2, "Java", "text")}
             stroke="null"
           >
             Java
@@ -1607,7 +1607,7 @@ const DevopsRoadmap = ({ answers }) => {
           <rect
             id="svg_90"
             strokeWidth="2.7"
-            fill={isSeceted(2, "PHP", "bg")}
+            fill={isSelected(2, "PHP", "bg")}
             rx="2"
             height="44.3"
             width="93.77554"
@@ -1616,7 +1616,7 @@ const DevopsRoadmap = ({ answers }) => {
             stroke="rgb(0,0,0)"
           />
           <text
-            fill={isSeceted(2, "PHP", "text")}
+            fill={isSelected(2, "PHP", "text")}
             strokeWidth="0"
             x="1128.31611"
             y="281.5"
@@ -1632,7 +1632,7 @@ const DevopsRoadmap = ({ answers }) => {
             id="svg_92"
             strokeWidth="2.7"
             stroke="rgb(0,0,0)"
-            fill={isSeceted(3, "剛入門", "bg")}
+            fill={isSelected(3, "剛入門", "bg")}
             rx="2"
             height="44.3"
             width="94.3"
@@ -1643,7 +1643,7 @@ const DevopsRoadmap = ({ answers }) => {
             id="svg_94"
             strokeWidth="2.7"
             stroke="rgb(0,0,0)"
-            fill={isSeceted(3, "已上手", "bg")}
+            fill={isSelected(3, "已上手", "bg")}
             rx="2"
             height="44.3"
             width="94.3"
@@ -1654,7 +1654,7 @@ const DevopsRoadmap = ({ answers }) => {
             stroke="rgb(0,0,0)"
             id="svg_14"
             strokeWidth="2.7"
-            fill={isSeceted(3, "這個世界好難懂", "bg")}
+            fill={isSelected(3, "這個世界好難懂", "bg")}
             rx="2"
             height="44.3"
             width="138.3"
@@ -1665,7 +1665,7 @@ const DevopsRoadmap = ({ answers }) => {
             id="svg_15"
             strokeWidth="2.7"
             stroke="rgb(0,0,0)"
-            fill={isSeceted(3, "熟門熟路", "bg")}
+            fill={isSelected(3, "熟門熟路", "bg")}
             rx="2"
             height="44.3"
             width="94.3"
@@ -1694,7 +1694,7 @@ const DevopsRoadmap = ({ answers }) => {
             x="617.14834"
             strokeWidth="0"
             stroke="rgb(0,0,0)"
-            fill={isSeceted(3, "剛入門", "text")}
+            fill={isSelected(3, "剛入門", "text")}
           >
             剛入門
           </text>
@@ -1707,7 +1707,7 @@ const DevopsRoadmap = ({ answers }) => {
             x="725.96799"
             strokeWidth="0"
             stroke="rgb(0,0,0)"
-            fill={isSeceted(3, "已上手", "text")}
+            fill={isSelected(3, "已上手", "text")}
           >
             已上手
           </text>
@@ -1720,7 +1720,7 @@ const DevopsRoadmap = ({ answers }) => {
             x="827.82056"
             strokeWidth="0"
             stroke="rgb(0,0,0)"
-            fill={isSeceted(3, "熟門熟路", "text")}
+            fill={isSelected(3, "熟門熟路", "text")}
           >
             熟門熟路
           </text>
@@ -1733,7 +1733,7 @@ const DevopsRoadmap = ({ answers }) => {
             x="931.13211"
             strokeWidth="0"
             stroke="rgb(0,0,0)"
-            fill={isSeceted(3, "這個世界好難懂", "text")}
+            fill={isSelected(3, "這個世界好難懂", "text")}
           >
             這個世界好難懂
           </text>
@@ -1799,7 +1799,7 @@ const DevopsRoadmap = ({ answers }) => {
             專案管理工具
           </text>
           <text
-            fill={isSeceted(5, "Jira", "text")}
+            fill={isSelected(5, "Jira", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1813,7 +1813,7 @@ const DevopsRoadmap = ({ answers }) => {
             Jira
           </text>
           <text
-            fill={isSeceted(5, "Jarvis Wiki (Confluence)", "text")}
+            fill={isSelected(5, "Jarvis Wiki (Confluence)", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1827,7 +1827,7 @@ const DevopsRoadmap = ({ answers }) => {
             Jarvis Wiki (Confluence)
           </text>
           <text
-            fill={isSeceted(5, "ClickUp", "text")}
+            fill={isSelected(5, "ClickUp", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1841,7 +1841,7 @@ const DevopsRoadmap = ({ answers }) => {
             ClickUp
           </text>
           <text
-            fill={isSeceted(5, "Trello", "text")}
+            fill={isSelected(5, "Trello", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1863,7 +1863,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_100"
               strokeWidth="2.7"
-              fill={isSeceted(6, "Unit testing", "bg")}
+              fill={isSelected(6, "Unit testing", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -1882,7 +1882,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_103"
               strokeWidth="2.7"
-              fill={isSeceted(6, "API testing", "bg")}
+              fill={isSelected(6, "API testing", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -1901,7 +1901,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_106"
               strokeWidth="2.7"
-              fill={isSeceted(6, "End-to-end testing", "bg")}
+              fill={isSelected(6, "End-to-end testing", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -1920,7 +1920,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_109"
               strokeWidth="2.7"
-              fill={isSeceted(6, "Integration testing", "bg")}
+              fill={isSelected(6, "Integration testing", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -1939,7 +1939,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_112"
               strokeWidth="2.7"
-              fill={isSeceted(6, "Performance testing", "bg")}
+              fill={isSelected(6, "Performance testing", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -1950,7 +1950,7 @@ const DevopsRoadmap = ({ answers }) => {
             <g id="svg_113" stroke="null" />
           </g>
           <text
-            fill={isSeceted(6, "Unit testing", "text")}
+            fill={isSelected(6, "Unit testing", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1964,7 +1964,7 @@ const DevopsRoadmap = ({ answers }) => {
             Unit testing
           </text>
           <text
-            fill={isSeceted(6, "API testing", "text")}
+            fill={isSelected(6, "API testing", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1978,7 +1978,7 @@ const DevopsRoadmap = ({ answers }) => {
             API testing
           </text>
           <text
-            fill={isSeceted(6, "End-to-end testing", "text")}
+            fill={isSelected(6, "End-to-end testing", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1992,7 +1992,7 @@ const DevopsRoadmap = ({ answers }) => {
             End-to-end testing
           </text>
           <text
-            fill={isSeceted(6, "Integration testing", "text")}
+            fill={isSelected(6, "Integration testing", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -2006,7 +2006,7 @@ const DevopsRoadmap = ({ answers }) => {
             Integration testing
           </text>
           <text
-            fill={isSeceted(6, "Performance testing", "text")}
+            fill={isSelected(6, "Performance testing", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -2028,7 +2028,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_57"
               strokeWidth="2.7"
-              fill={isSeceted(6, "Static Code Analysis", "bg")}
+              fill={isSelected(6, "Static Code Analysis", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -2039,7 +2039,7 @@ const DevopsRoadmap = ({ answers }) => {
             <g id="svg_58" stroke="null" />
           </g>
           <text
-            fill={isSeceted(6, "Static Code Analysis", "text")}
+            fill={isSelected(6, "Static Code Analysis", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -2062,7 +2062,7 @@ const DevopsRoadmap = ({ answers }) => {
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill={isSeceted(7, "Alibaba Cloud", "text")}
+            fill={isSelected(7, "Alibaba Cloud", "text")}
           >
             Alibaba Cloud
           </text>
@@ -2107,7 +2107,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_125"
               strokeWidth="2.7"
-              fill={isSeceted(8, "Bare Metal (實體主機)", "bg")}
+              fill={isSelected(8, "Bare Metal (實體主機)", "bg")}
               rx="2"
               height="43.3"
               width="139.3"
@@ -2125,7 +2125,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_131"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(8, "Virtual Machines", "bg")}
+              fill={isSelected(8, "Virtual Machines", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -2142,7 +2142,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_135"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(8, "Containers", "bg")}
+              fill={isSelected(8, "Containers", "bg")}
               rx="2"
               height="44.3"
               width="141.3"
@@ -2159,7 +2159,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_143"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(8, "Serverless", "bg")}
+              fill={isSelected(8, "Serverless", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -2177,7 +2177,7 @@ const DevopsRoadmap = ({ answers }) => {
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill={isSeceted(8, "Serverless", "text")}
+            fill={isSelected(8, "Serverless", "text")}
           >
             Serverless
           </text>
@@ -2220,7 +2220,7 @@ const DevopsRoadmap = ({ answers }) => {
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill={isSeceted(8, "Containers", "text")}
+            fill={isSelected(8, "Containers", "text")}
           >
             Containers
           </text>
@@ -2234,7 +2234,7 @@ const DevopsRoadmap = ({ answers }) => {
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill={isSeceted(8, "Bare Metal (實體主機)", "text")}
+            fill={isSelected(8, "Bare Metal (實體主機)", "text")}
           >
             Bare Metal
           </text>
@@ -2248,7 +2248,7 @@ const DevopsRoadmap = ({ answers }) => {
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill={isSeceted(8, "Virtual Machines", "text")}
+            fill={isSelected(8, "Virtual Machines", "text")}
           >
             Virtual Machines
           </text>
@@ -2290,7 +2290,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_165"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(9, "AWS CDK", "bg")}
+              fill={isSelected(9, "AWS CDK", "bg")}
               rx="2"
               height="43.3"
               width="138.3"
@@ -2307,7 +2307,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_167"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(9, "CloudFormation", "bg")}
+              fill={isSelected(9, "CloudFormation", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -2324,7 +2324,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_169"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(9, "Terraform", "bg")}
+              fill={isSelected(9, "Terraform", "bg")}
               rx="2"
               height="44.3"
               width="141.3"
@@ -2341,7 +2341,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_172"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(9, "Serverless", "bg")}
+              fill={isSelected(9, "Serverless", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -2359,7 +2359,7 @@ const DevopsRoadmap = ({ answers }) => {
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill={isSeceted(9, "Serverless", "text")}
+            fill={isSelected(9, "Serverless", "text")}
           >
             Serverless
           </text>
@@ -2373,7 +2373,7 @@ const DevopsRoadmap = ({ answers }) => {
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill={isSeceted(9, "Terraform", "text")}
+            fill={isSelected(9, "Terraform", "text")}
           >
             Terraform
           </text>
@@ -2387,7 +2387,7 @@ const DevopsRoadmap = ({ answers }) => {
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill={isSeceted(9, "AWS CDK", "text")}
+            fill={isSelected(9, "AWS CDK", "text")}
           >
             AWS CDK
           </text>
@@ -2401,7 +2401,7 @@ const DevopsRoadmap = ({ answers }) => {
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill={isSeceted(9, "CloudFormation", "text")}
+            fill={isSelected(9, "CloudFormation", "text")}
           >
             CloudFormation
           </text>
@@ -2414,7 +2414,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_178"
               strokeWidth="2.7"
-              fill={isSeceted(10, "Yes", "bg")}
+              fill={isSelected(10, "Yes", "bg")}
               rx="2"
               height="43.3"
               width="100.29995"
@@ -2425,7 +2425,7 @@ const DevopsRoadmap = ({ answers }) => {
             <g id="svg_179" stroke="null" />
           </g>
           <text
-            fill={isSeceted(10, "Yes", "text")}
+            fill={isSelected(10, "Yes", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -2479,7 +2479,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_1"
               strokeWidth="2.7"
-              fill={isSeceted(10, "No", "bg")}
+              fill={isSelected(10, "No", "bg")}
               rx="2"
               height="43.3"
               width="100.29995"
@@ -2490,7 +2490,7 @@ const DevopsRoadmap = ({ answers }) => {
             <g id="svg_6" stroke="null" />
           </g>
           <text
-            fill={isSeceted(10, "No", "text")}
+            fill={isSelected(10, "No", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -2562,7 +2562,7 @@ const DevopsRoadmap = ({ answers }) => {
             CI / CD 工具
           </text>
           <text
-            fill={isSeceted(12, "Others", "text")}
+            fill={isSelected(12, "Others", "text")}
             x="554"
             y="1322.5"
             id="svg_195"
@@ -2582,7 +2582,7 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_198"
               strokeWidth="2.7"
-              fill={isSeceted(13, "Kubernetes", "bg")}
+              fill={isSelected(13, "Kubernetes", "bg")}
               rx="2"
               height="43.3"
               width="217.29999"
@@ -2592,7 +2592,7 @@ const DevopsRoadmap = ({ answers }) => {
             />
           </g>
           <text
-            fill={isSeceted(13, "Kubernetes", "text")}
+            fill={isSelected(13, "Kubernetes", "text")}
             stroke="null"
             strokeWidth="0"
             x="720"
@@ -2605,7 +2605,7 @@ const DevopsRoadmap = ({ answers }) => {
             Kubernetes
           </text>
           <text
-            fill={isSeceted(13, "Docker Swarm / Compose", "text")}
+            fill={isSelected(13, "Docker Swarm / Compose", "text")}
             x="663"
             y="1581.5"
             id="svg_204"
@@ -2642,7 +2642,7 @@ const DevopsRoadmap = ({ answers }) => {
             系統監控軟體
           </text>
           <text
-            fill={isSeceted(14, "Icinga", "text")}
+            fill={isSelected(14, "Icinga", "text")}
             x="484"
             y="1917.5"
             id="svg_216"
@@ -2683,7 +2683,7 @@ const DevopsRoadmap = ({ answers }) => {
             Logs 管理工具
           </text>
           <text
-            fill={isSeceted(15, "Graylog", "text")}
+            fill={isSelected(15, "Graylog", "text")}
             x="1050"
             y="1915.5"
             id="svg_220"
@@ -2695,7 +2695,7 @@ const DevopsRoadmap = ({ answers }) => {
             Graylog
           </text>
           <text
-            fill={isSeceted(15, "CloudWatch", "text")}
+            fill={isSelected(15, "CloudWatch", "text")}
             strokeWidth="0"
             x="912"
             y="1915.5"
