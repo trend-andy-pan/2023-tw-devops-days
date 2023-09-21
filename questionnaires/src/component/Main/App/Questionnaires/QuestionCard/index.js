@@ -50,7 +50,7 @@ export default function QuestionCard({ step, index }) {
   const renderRadio = () => {
     const groupList = answers.map((answer) => {
       return (
-        <QuestionRadio key={`${step}-${answer}`} value={answer} size="lg">
+        <QuestionRadio key={`${index}-${answer}`} value={answer} size="lg">
           {answer}
         </QuestionRadio>
       );
@@ -60,9 +60,9 @@ export default function QuestionCard({ step, index }) {
       groupList.push(
         <QuestionRadioOthers
           {...{
-            key: `${step}-other`,
+            key: `${index}-other`,
             step,
-            name: `answer-${step}`,
+            name: `answer-${index}`,
             radioOthersRef: childRef,
           }}
         />
@@ -70,7 +70,7 @@ export default function QuestionCard({ step, index }) {
     }
     return (
       <Controller
-        name={`answer-${step}`}
+        name={`answer-${index}`}
         control={control}
         defaultValue={""}
         render={({ field }) => (
@@ -91,7 +91,7 @@ export default function QuestionCard({ step, index }) {
   const renderCheckbox = () => {
     const groupList = answers.map((answer) => {
       return (
-        <QuestionCheckbox key={`${step}-${answer}`} value={answer} size="lg">
+        <QuestionCheckbox key={`${index}-${answer}`} value={answer} size="lg">
           {answer}
         </QuestionCheckbox>
       );
@@ -101,9 +101,9 @@ export default function QuestionCard({ step, index }) {
       groupList.push(
         <QuestionCheckboxOthers
           {...{
-            key: `${step}-other`,
+            key: `${index}-other`,
             step,
-            name: `answer-${step}`,
+            name: `answer-${index}`,
             radioCheckboxRef: childRef,
           }}
         />
@@ -112,7 +112,7 @@ export default function QuestionCard({ step, index }) {
 
     return (
       <Controller
-        name={`answer-${step}`}
+        name={`answer-${index}`}
         control={control}
         defaultValue={[]}
         render={({ field }) => (
@@ -161,7 +161,7 @@ export default function QuestionCard({ step, index }) {
         className="rounded-lg h-full rounded-t-none"
       >
         <Controller
-          name={`question-${step}`}
+          name={`question-${index}`}
           control={control}
           defaultValue={question}
           render={() => {}}
