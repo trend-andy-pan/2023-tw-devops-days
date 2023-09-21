@@ -5,6 +5,7 @@ import QuestionnairesContext from "../../../../context/questionnaires";
 import QuestionCard from "./QuestionCard";
 import PersonalCard from "./PersonalCard";
 import HelpCard from "./HelpCard";
+import WelcomeCard from "./WelcomeCard";
 
 export default function Questionnaires() {
   const {
@@ -22,6 +23,7 @@ export default function Questionnaires() {
         className="flex flex-nowrap flex-row w-full h-full gap-6 !duration-500 questionnaires"
         style={{ transform: `translateX(calc((-100% - 1.5rem) * ${step}))` }}
       >
+        <WelcomeCard key="WelcomeCard" step={(index += 1)} />
         {questions.map((question, i) => {
           return (
             <React.Fragment key={`Question-${i}`}>

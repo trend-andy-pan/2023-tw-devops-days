@@ -124,6 +124,12 @@ export default function App() {
 
   const renderNextButton = () => {
     switch (true) {
+      case step <= 0:
+        return (
+          <Button color="primary" variant="shadow" onClick={() => handleNext()}>
+            開始填寫
+          </Button>
+        );
       case step <= maxStep - 2:
         return (
           <Button color="primary" variant="shadow" onClick={() => handleNext()}>
@@ -169,7 +175,7 @@ export default function App() {
           justify="none"
         >
           <h1 className="text-2xl max-md:text-base font-bold text-inherit">
-            What's your DevOps Story?
+            {step !== 0 ? "What's your DevOps Story?" : ""}
           </h1>
         </NavbarContent>
       </Navbar>
@@ -180,14 +186,14 @@ export default function App() {
       <footer className="px-6">
         <div
           className={`flex w-full ${
-            step !== maxStep ? "justify-between" : "justify-end"
+            step !== maxStep && step >= 2 ? "justify-between" : "justify-end"
           } py-6 max-md:py-3`}
         >
-          {step !== maxStep ? (
+          {step !== maxStep && step >= 2 ? (
             <Button
               color="secondary"
               variant="ghost"
-              isDisabled={step <= 0}
+              isDisabled={step <= 1}
               onClick={() => handlePrev()}
             >
               上一題
@@ -195,7 +201,7 @@ export default function App() {
           ) : null}
           {loading ? (
             <Button color="primary" variant="shadow" isDisabled isLoading>
-              下一題
+              開始填寫
             </Button>
           ) : (
             renderNextButton()
