@@ -6,6 +6,7 @@ import {
   Image,
   Button,
   Progress,
+  useDisclosure,
 } from "@nextui-org/react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -17,11 +18,16 @@ import Questionnaires from "./Questionnaires";
 
 import logoImg from "../../../assets/TrendMicroLogo.png";
 import "./index.css";
+import RoadmapModal from "./RoadmapModal";
 
 export default function App() {
   const bearer =
     "U2FsdGVkX184KWZlLhP23BFZpa6WmeF6Hu8lGZ59yI5VZXMLh3t56/KBxUwwpBcoib7oWdSQsrzG45gY+KqTCI8ArUfMxuEQfUdJxwqk7CT1FK9y0HtBIPzx9RrKQcWD4JozdXeFqlGLrVlDEosEKJblC+FIbb5fDt5t+6Y98AM=";
-
+  const {
+    isOpen: isModalOpen,
+    onOpen: onModalOpen,
+    onClose: onModalClose,
+  } = useDisclosure();
   const [submitLoading, setSubmitLoading] = useState(false);
 
   const {
@@ -113,13 +119,14 @@ export default function App() {
 
   const handleSubmit = () => {
     postPersonalInfo();
+    onModalOpen();
   };
 
   const renderNextButton = () => {
     switch (true) {
       case step <= maxStep - 2:
         return (
-          <Button color="primary" variant="ghost" onClick={() => handleNext()}>
+          <Button color="primary" variant="shadow" onClick={() => handleNext()}>
             下一題
           </Button>
         );
@@ -127,7 +134,7 @@ export default function App() {
         return (
           <Button
             color="success"
-            variant="ghost"
+            variant="shadow"
             onClick={() => postQuestionnaires()}
             isLoading={submitLoading}
           >
@@ -168,6 +175,7 @@ export default function App() {
       </Navbar>
       <article className="flex-grow px-6 pt-6 max-md:px-3 max-md:pt-3">
         <Questionnaires />
+        <RoadmapModal {...{ isModalOpen, onModalClose }} />
       </article>
       <footer className="px-6">
         <div
@@ -186,7 +194,7 @@ export default function App() {
             </Button>
           ) : null}
           {loading ? (
-            <Button color="primary" variant="ghost" isDisabled isLoading>
+            <Button color="primary" variant="shadow" isDisabled isLoading>
               下一題
             </Button>
           ) : (

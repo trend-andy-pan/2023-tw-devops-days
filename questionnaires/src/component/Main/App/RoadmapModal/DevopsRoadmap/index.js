@@ -1,3 +1,24 @@
+import React from "react";
+
+const DevopsRoadmap = ({ answers }) => {
+  const selectBgColor = "#d71920";
+  const selectTextColor = "#FFFFFF";
+  const unSelectBgColor = "#9CA3AF";
+  const unSelectTextColor = "#000000";
+
+  const isSeceted = (answerNo, value, type) => {
+    const selectColor = type === "text" ? selectTextColor : selectBgColor;
+    const unSelectColor = type === "text" ? unSelectTextColor : unSelectBgColor;
+
+    let answer = answers[`answer-${answerNo}`];
+
+    if (!Array.isArray(answer)) answer = [answer];
+
+    return answer.includes(value) ? selectColor : unSelectColor;
+  };
+
+  return (
+    <div id="devops_roadmap">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -387,7 +408,7 @@
             <rect
               id="svg_128"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(2, ".Net", "bg")}
               rx="2"
               height="44.3"
               width="98.3"
@@ -403,7 +424,7 @@
               id="svg_82"
               y="333.5"
               x="1125.07732"
-              fill="#000000"
+              fill={isSeceted(2, ".Net", "text")}
               stroke="null"
               transform="matrix(0.970385 0 0 1 34.2749 1)"
             >
@@ -419,7 +440,7 @@
               id="svg_137"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(2, "Python", "bg")}
               rx="2"
               height="44.3"
               width="94.3"
@@ -431,7 +452,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(2, "Python", "text")}
               y="334.671"
               x="1013"
             >
@@ -447,7 +468,7 @@
               id="svg_146"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(2, "JavaScript", "bg")}
               rx="2"
               height="44.3"
               width="204.3"
@@ -459,7 +480,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(2, "JavaScript", "text")}
               y="435.739"
               x="1013"
             >
@@ -475,7 +496,7 @@
               id="svg_155"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(2, "Go", "bg")}
               rx="2"
               height="44.3"
               width="94.3"
@@ -488,7 +509,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(2, "Go", "text")}
               y="384.6795"
               x="1027"
             >
@@ -506,7 +527,7 @@
             <rect
               id="svg_163"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(2, "C/C++", "bg")}
               rx="2"
               height="44.3"
               width="99.3"
@@ -515,7 +536,7 @@
               stroke="rgb(0,0,0)"
             />
             <text
-              fill="#000000"
+              fill={isSeceted(2, "C/C++", "text")}
               strokeWidth="0"
               x="1123.73112"
               y="385.5"
@@ -555,7 +576,7 @@
               id="svg_268"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(4, "GitHub", "bg")}
               rx="2"
               height="44.3"
               width="105.3"
@@ -567,7 +588,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(4, "GitHub", "text")}
               y="805.6795"
               x="1228"
             >
@@ -583,7 +604,7 @@
               id="svg_272"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(4, "GitLab", "bg")}
               rx="2"
               height="44.3"
               width="109.3"
@@ -595,7 +616,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(4, "GitLab", "text")}
               y="856.6795"
               x="1229"
             >
@@ -611,7 +632,7 @@
               id="svg_279"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(4, "Bitbucket", "bg")}
               rx="2"
               height="44.3"
               width="109.3"
@@ -623,7 +644,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(4, "Bitbucket", "text")}
               y="907.637"
               x="1220"
             >
@@ -656,7 +677,7 @@
               id="svg_405"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(14, "Grafana", "bg")}
               rx="2"
               height="44.3"
               width="127.3"
@@ -668,7 +689,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(14, "Grafana", "text")}
               y="1769.6795"
               x="609"
             >
@@ -684,7 +705,7 @@
               id="svg_413"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(14, "Datadog", "bg")}
               rx="2"
               height="44.3"
               width="127.3"
@@ -696,7 +717,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(14, "Datadog", "text")}
               y="1768.6965"
               x="473"
             >
@@ -712,7 +733,7 @@
               id="svg_422"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(14, "Icinga", "bg")}
               rx="2"
               height="44.3"
               width="126.3"
@@ -729,7 +750,7 @@
               id="svg_431"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(14, "Prometheus", "bg")}
               rx="2"
               height="44.3"
               width="127.3"
@@ -741,7 +762,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(14, "Prometheus", "text")}
               y="1917.671"
               x="592"
             >
@@ -776,7 +797,7 @@
               id="svg_509"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(7, "AWS", "bg")}
               rx="2"
               height="43.3"
               width="138.3"
@@ -788,7 +809,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(7, "AWS", "text")}
               y="828.688"
               x="483"
             >
@@ -804,7 +825,7 @@
               id="svg_517"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(7, "Google Cloud", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -816,7 +837,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(7, "Google Cloud", "text")}
               y="830.6795"
               x="597"
             >
@@ -832,7 +853,7 @@
             <rect
               id="svg_526"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(7, "Azure", "bg")}
               rx="2"
               height="44.3"
               width="140.3"
@@ -845,7 +866,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(7, "Azure", "text")}
               y="879.688"
               x="481.26586"
               stroke="null"
@@ -865,7 +886,7 @@
               id="svg_535"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(7, "Alibaba Cloud", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -882,7 +903,7 @@
             <rect
               id="svg_543"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(5, "ClickUp", "bg")}
               rx="2"
               height="43.3"
               width="77.29999"
@@ -900,7 +921,7 @@
             <rect
               id="svg_552"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(5, "Jarvis Wiki (Confluence)", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -919,7 +940,7 @@
             <rect
               id="svg_561"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(5, "Trello", "bg")}
               rx="2"
               height="44.3"
               width="63.30003"
@@ -937,7 +958,7 @@
             <rect
               id="svg_570"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(5, "Jira", "bg")}
               rx="2"
               height="43.3"
               width="60.29999"
@@ -966,7 +987,7 @@
               id="svg_587"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(11, "Ansible", "bg")}
               rx="2"
               height="44.3"
               width="151.3"
@@ -978,7 +999,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(11, "Ansible", "text")}
               y="1220.688"
               x="804"
             >
@@ -994,7 +1015,7 @@
               id="svg_591"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(11, "Chef", "bg")}
               rx="2"
               height="44.3"
               width="151.3"
@@ -1006,7 +1027,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(11, "Chef", "text")}
               y="1270.6625"
               x="814"
             >
@@ -1022,7 +1043,7 @@
               id="svg_595"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(11, "Puppet", "bg")}
               rx="2"
               height="44.3"
               width="151.3"
@@ -1034,7 +1055,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(11, "Puppet", "text")}
               y="1320.671"
               x="805"
             >
@@ -1050,7 +1071,7 @@
               id="svg_618"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(15, "Elastic Stack", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -1062,7 +1083,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(15, "Elastic Stack", "text")}
               y="1766.6625"
               x="910"
             >
@@ -1078,7 +1099,7 @@
               id="svg_626"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(15, "CloudWatch", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -1095,7 +1116,7 @@
               id="svg_635"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(15, "Graylog", "bg")}
               rx="2"
               height="44.3"
               width="83.3"
@@ -1112,7 +1133,7 @@
               id="svg_653"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(15, "Loki", "bg")}
               rx="2"
               height="44.3"
               width="85.3"
@@ -1124,7 +1145,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(15, "Loki", "text")}
               y="1766.637"
               x="1063"
             >
@@ -1158,7 +1179,7 @@
             <rect
               id="svg_665"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(13, "Docker Swarm / Compose", "bg")}
               rx="2"
               height="43.3"
               width="216.29999"
@@ -1176,7 +1197,7 @@
               id="svg_682"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(13, "GKE / EKS / AKS", "bg")}
               rx="2"
               height="43.3"
               width="190.3"
@@ -1188,7 +1209,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(13, "GKE / EKS / AKS", "text")}
               y="1581.739"
               x="485"
             >
@@ -1204,7 +1225,7 @@
               id="svg_691"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(13, "AWS ECS / Fargate", "bg")}
               rx="2"
               height="43.3"
               width="190.3"
@@ -1216,7 +1237,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(13, "AWS ECS / Fargate", "text")}
               y="1630.739"
               x="471"
             >
@@ -1284,7 +1305,7 @@
               id="svg_956"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(12, "Jenkins", "bg")}
               rx="2"
               height="43.3"
               width="108.3"
@@ -1296,7 +1317,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(12, "Jenkins", "text")}
               y="1222.637"
               x="551"
             >
@@ -1312,7 +1333,7 @@
               id="svg_964"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(12, "Gitlab CI", "bg")}
               rx="2"
               height="43.3"
               width="150.3"
@@ -1324,7 +1345,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(12, "Gitlab CI", "text")}
               y="1222.6795"
               x="410"
             >
@@ -1340,7 +1361,7 @@
               id="svg_972"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(12, "Travis CI", "bg")}
               rx="2"
               height="43.3"
               width="108.3"
@@ -1352,7 +1373,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(12, "Travis CI", "text")}
               y="1271.637"
               x="545"
             >
@@ -1368,7 +1389,7 @@
               id="svg_981"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(12, "GitHub Actions", "bg")}
               rx="2"
               height="43.3"
               width="149.3"
@@ -1380,7 +1401,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(12, "GitHub Actions", "text")}
               y="1271.688"
               x="387"
             >
@@ -1396,7 +1417,7 @@
               id="svg_998"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(12, "Circle CI", "bg")}
               rx="2"
               height="44.3"
               width="149.3"
@@ -1408,7 +1429,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(12, "Circle CI", "text")}
               y="1322.637"
               x="410"
             >
@@ -1424,7 +1445,7 @@
               id="svg_1006"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(12, "Others", "bg")}
               rx="2"
               height="44.3"
               width="109.3"
@@ -1441,7 +1462,7 @@
             <rect
               id="svg_1015"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(12, "Azure DevOps Services", "bg")}
               rx="2"
               height="44.3"
               width="266.3"
@@ -1454,7 +1475,7 @@
               fontSize="17px"
               fontWeight="normal"
               fontStyle="normal"
-              fill="rgb(0,0,0)"
+              fill={isSeceted(12, "Azure DevOps Services", "text")}
               y="1491.6965"
               x="416"
               stroke="null"
@@ -1563,7 +1584,7 @@
           <rect
             id="svg_84"
             strokeWidth="2.7"
-            fill="rgb(156 163 175)"
+            fill={isSeceted(2, "Java", "bg")}
             rx="2"
             height="44.3"
             width="94.77555"
@@ -1578,7 +1599,7 @@
             id="svg_88"
             y="279.5"
             x="1020.32113"
-            fill="rgb(0,0,0)"
+            fill={isSeceted(2, "Java", "text")}
             stroke="null"
           >
             Java
@@ -1586,7 +1607,7 @@
           <rect
             id="svg_90"
             strokeWidth="2.7"
-            fill="rgb(156 163 175)"
+            fill={isSeceted(2, "PHP", "bg")}
             rx="2"
             height="44.3"
             width="93.77554"
@@ -1595,7 +1616,7 @@
             stroke="rgb(0,0,0)"
           />
           <text
-            fill="#000000"
+            fill={isSeceted(2, "PHP", "text")}
             strokeWidth="0"
             x="1128.31611"
             y="281.5"
@@ -1611,7 +1632,7 @@
             id="svg_92"
             strokeWidth="2.7"
             stroke="rgb(0,0,0)"
-            fill="rgb(156 163 175)"
+            fill={isSeceted(3, "剛入門", "bg")}
             rx="2"
             height="44.3"
             width="94.3"
@@ -1622,7 +1643,7 @@
             id="svg_94"
             strokeWidth="2.7"
             stroke="rgb(0,0,0)"
-            fill="rgb(156 163 175)"
+            fill={isSeceted(3, "已上手", "bg")}
             rx="2"
             height="44.3"
             width="94.3"
@@ -1633,7 +1654,7 @@
             stroke="rgb(0,0,0)"
             id="svg_14"
             strokeWidth="2.7"
-            fill="rgb(156 163 175)"
+            fill={isSeceted(3, "這個世界好難懂", "bg")}
             rx="2"
             height="44.3"
             width="138.3"
@@ -1644,7 +1665,7 @@
             id="svg_15"
             strokeWidth="2.7"
             stroke="rgb(0,0,0)"
-            fill="rgb(156 163 175)"
+            fill={isSeceted(3, "熟門熟路", "bg")}
             rx="2"
             height="44.3"
             width="94.3"
@@ -1673,7 +1694,7 @@
             x="617.14834"
             strokeWidth="0"
             stroke="rgb(0,0,0)"
-            fill="#000000"
+            fill={isSeceted(3, "剛入門", "text")}
           >
             剛入門
           </text>
@@ -1686,7 +1707,7 @@
             x="725.96799"
             strokeWidth="0"
             stroke="rgb(0,0,0)"
-            fill="#000000"
+            fill={isSeceted(3, "已上手", "text")}
           >
             已上手
           </text>
@@ -1699,7 +1720,7 @@
             x="827.82056"
             strokeWidth="0"
             stroke="rgb(0,0,0)"
-            fill="#000000"
+            fill={isSeceted(3, "熟門熟路", "text")}
           >
             熟門熟路
           </text>
@@ -1712,7 +1733,7 @@
             x="931.13211"
             strokeWidth="0"
             stroke="rgb(0,0,0)"
-            fill="#000000"
+            fill={isSeceted(3, "這個世界好難懂", "text")}
           >
             這個世界好難懂
           </text>
@@ -1778,7 +1799,7 @@
             專案管理工具
           </text>
           <text
-            fill="rgb(0,0,0)"
+            fill={isSeceted(5, "Jira", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1792,7 +1813,7 @@
             Jira
           </text>
           <text
-            fill="rgb(0,0,0)"
+            fill={isSeceted(5, "Jarvis Wiki (Confluence)", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1806,7 +1827,7 @@
             Jarvis Wiki (Confluence)
           </text>
           <text
-            fill="rgb(0,0,0)"
+            fill={isSeceted(5, "ClickUp", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1820,7 +1841,7 @@
             ClickUp
           </text>
           <text
-            fill="rgb(0,0,0)"
+            fill={isSeceted(5, "Trello", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1842,7 +1863,7 @@
             <rect
               id="svg_100"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(6, "Unit testing", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -1861,7 +1882,7 @@
             <rect
               id="svg_103"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(6, "API testing", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -1880,7 +1901,7 @@
             <rect
               id="svg_106"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(6, "End-to-end testing", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -1899,7 +1920,7 @@
             <rect
               id="svg_109"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(6, "Integration testing", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -1918,7 +1939,7 @@
             <rect
               id="svg_112"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(6, "Performance testing", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -1929,7 +1950,7 @@
             <g id="svg_113" stroke="null" />
           </g>
           <text
-            fill="#000000"
+            fill={isSeceted(6, "Unit testing", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1943,7 +1964,7 @@
             Unit testing
           </text>
           <text
-            fill="#000000"
+            fill={isSeceted(6, "API testing", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1954,10 +1975,10 @@
             textAnchor="start"
             xmlSpace="preserve"
           >
-            Api testing
+            API testing
           </text>
           <text
-            fill="#000000"
+            fill={isSeceted(6, "End-to-end testing", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1971,7 +1992,7 @@
             End-to-end testing
           </text>
           <text
-            fill="#000000"
+            fill={isSeceted(6, "Integration testing", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -1985,7 +2006,7 @@
             Integration testing
           </text>
           <text
-            fill="#000000"
+            fill={isSeceted(6, "Performance testing", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -2007,7 +2028,7 @@
             <rect
               id="svg_57"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(6, "Static Code Analysis", "bg")}
               rx="2"
               height="44.3"
               width="219.3"
@@ -2018,7 +2039,7 @@
             <g id="svg_58" stroke="null" />
           </g>
           <text
-            fill="#000000"
+            fill={isSeceted(6, "Static Code Analysis", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -2041,7 +2062,7 @@
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill="#000000"
+            fill={isSeceted(7, "Alibaba Cloud", "text")}
           >
             Alibaba Cloud
           </text>
@@ -2086,7 +2107,7 @@
             <rect
               id="svg_125"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(8, "Bare Metal (實體主機)", "bg")}
               rx="2"
               height="43.3"
               width="139.3"
@@ -2104,7 +2125,7 @@
               id="svg_131"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(8, "Virtual Machines", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -2121,7 +2142,7 @@
               id="svg_135"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(8, "Containers", "bg")}
               rx="2"
               height="44.3"
               width="141.3"
@@ -2138,7 +2159,7 @@
               id="svg_143"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(8, "Serverless", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -2156,7 +2177,7 @@
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill="#000000"
+            fill={isSeceted(8, "Serverless", "text")}
           >
             Serverless
           </text>
@@ -2199,7 +2220,7 @@
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill="#000000"
+            fill={isSeceted(8, "Containers", "text")}
           >
             Containers
           </text>
@@ -2213,7 +2234,7 @@
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill="#000000"
+            fill={isSeceted(8, "Bare Metal (實體主機)", "text")}
           >
             Bare Metal
           </text>
@@ -2227,7 +2248,7 @@
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill="#000000"
+            fill={isSeceted(8, "Virtual Machines", "text")}
           >
             Virtual Machines
           </text>
@@ -2269,7 +2290,7 @@
               id="svg_165"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(9, "AWS CDK", "bg")}
               rx="2"
               height="43.3"
               width="138.3"
@@ -2286,7 +2307,7 @@
               id="svg_167"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(9, "CloudFormation", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -2303,7 +2324,7 @@
               id="svg_169"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(9, "Terraform", "bg")}
               rx="2"
               height="44.3"
               width="141.3"
@@ -2320,7 +2341,7 @@
               id="svg_172"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(9, "Serverless", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -2338,7 +2359,7 @@
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill="#000000"
+            fill={isSeceted(9, "Serverless", "text")}
           >
             Serverless
           </text>
@@ -2352,7 +2373,7 @@
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill="#000000"
+            fill={isSeceted(9, "Terraform", "text")}
           >
             Terraform
           </text>
@@ -2366,7 +2387,7 @@
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill="#000000"
+            fill={isSeceted(9, "AWS CDK", "text")}
           >
             AWS CDK
           </text>
@@ -2380,7 +2401,7 @@
             strokeDasharray="undefined"
             strokeWidth="0"
             stroke="rgb(43,120,228)"
-            fill="#000000"
+            fill={isSeceted(9, "CloudFormation", "text")}
           >
             CloudFormation
           </text>
@@ -2393,7 +2414,7 @@
             <rect
               id="svg_178"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(10, "Yes", "bg")}
               rx="2"
               height="43.3"
               width="100.29995"
@@ -2404,7 +2425,7 @@
             <g id="svg_179" stroke="null" />
           </g>
           <text
-            fill="rgb(0,0,0)"
+            fill={isSeceted(10, "Yes", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -2458,7 +2479,7 @@
             <rect
               id="svg_1"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(10, "No", "bg")}
               rx="2"
               height="43.3"
               width="100.29995"
@@ -2469,7 +2490,7 @@
             <g id="svg_6" stroke="null" />
           </g>
           <text
-            fill="rgb(0,0,0)"
+            fill={isSeceted(10, "No", "text")}
             stroke="rgb(43,120,228)"
             strokeWidth="0"
             strokeDasharray="0.8 12"
@@ -2541,7 +2562,7 @@
             CI / CD 工具
           </text>
           <text
-            fill="#000000"
+            fill={isSeceted(12, "Others", "text")}
             x="554"
             y="1322.5"
             id="svg_195"
@@ -2561,7 +2582,7 @@
             <rect
               id="svg_198"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(13, "Kubernetes", "bg")}
               rx="2"
               height="43.3"
               width="217.29999"
@@ -2571,8 +2592,8 @@
             />
           </g>
           <text
-            fill="#000000"
-            stroke="rgb(0,0,0)"
+            fill={isSeceted(13, "Kubernetes", "text")}
+            stroke="null"
             strokeWidth="0"
             x="720"
             y="1629.5"
@@ -2584,7 +2605,7 @@
             Kubernetes
           </text>
           <text
-            fill="#000000"
+            fill={isSeceted(13, "Docker Swarm / Compose", "text")}
             x="663"
             y="1581.5"
             id="svg_204"
@@ -2621,7 +2642,7 @@
             系統監控軟體
           </text>
           <text
-            fill="#000000"
+            fill={isSeceted(14, "Icinga", "text")}
             x="484"
             y="1917.5"
             id="svg_216"
@@ -2662,7 +2683,7 @@
             Logs 管理工具
           </text>
           <text
-            fill="#000000"
+            fill={isSeceted(15, "Graylog", "text")}
             x="1050"
             y="1915.5"
             id="svg_220"
@@ -2674,7 +2695,7 @@
             Graylog
           </text>
           <text
-            fill="#000000"
+            fill={isSeceted(15, "CloudWatch", "text")}
             strokeWidth="0"
             x="912"
             y="1915.5"
@@ -2715,3 +2736,7 @@
           />
         </g>
       </svg>
+    </div>
+  );
+};
+export default DevopsRoadmap;

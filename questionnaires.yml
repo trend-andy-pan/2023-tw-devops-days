@@ -45,8 +45,7 @@ questionnaires:
     answers:
       - Python
       - Go
-      - Javascript
-      - Node.js
+      - JavaScript
       - .Net
       - C/C++
       - Java
@@ -54,7 +53,7 @@ questionnaires:
     help:
       title: 你知道嗎
       description: |
-        趨勢人中，Python 是最受歡迎的程式語言，約 26.05% 的答題者的團隊使用它。 其他受歡迎的程式語言包括 Go (10.53%)、Javascript (8.42%) 和 Java (6.32%)。 Node.js 和 C/C++ 也有一定的使用率，分別為 5.26% 和 5.00%。
+        趨勢人中，Python 是最受歡迎的程式語言，約 26.05% 的答題者的團隊使用它。 其他受歡迎的程式語言包括 Go (10.53%)、Javascript (8.42%) 和 Java (6.32%)。 Node.js 和 C/C++ 也有一定的使用率，分別為 5.26% 和 5.00%。  
   - question: 是否有接觸過網絡協議的相關經驗？
     type: radio
     otherAnswer: false
@@ -84,7 +83,7 @@ questionnaires:
     answers:
       - Jira
       - Jarvis Wiki (Confluence)
-      - Clickup
+      - ClickUp
       - Trello
       - 無
     help:
@@ -96,13 +95,13 @@ questionnaires:
     otherAnswer: true
     answers:
       - Unit testing
-      - Api testing
+      - API testing
       - End-to-end testing
       - Integration testing
       - Performance testing
       - Static Code Analysis
       - 無
-    help:
+    help: 
       title: 你知道嗎
       description: |
         單元測試 (Unit testing) 是最常見的自動化測試類型，佔 18.55%。 端到端測試 (End-to-end testing) 佔 14.11%。 整合測試 (Integration testing) 佔 13.10%。 API 測試 (Api testing) 佔 12.30%。 靜態代碼分析 (Static Code Analysis) 佔 9.88%。 效能測試 (Performance testing) 佔 6.05%。
@@ -113,9 +112,7 @@ questionnaires:
       - AWS
       - Azure
       - Google Cloud
-      - Oracle Cloud
       - Alibaba Cloud
-      - IBM Cloud
       - 無
 
   - question: 使用中的基礎設施的架構?
@@ -160,14 +157,15 @@ questionnaires:
 
   - question: 使用的 CI/CD 工具?
     type: checkbox
-    otherAnswer: true
+    otherAnswer: false
     answers:
-      - Github Actions
+      - GitHub Actions
       - Gitlab CI
       - Jenkins
       - Circle CI
       - Travis CI
       - Azure DevOps Services
+      - Others
       - 無
     help:
       title: 你知道嗎
@@ -178,9 +176,9 @@ questionnaires:
     otherAnswer: true
     answers:
       - Kubernetes
-      - Docker Swarm/Compose
-      - GKE/ EKS /AKS
-      - AWS ECS
+      - Docker Swarm / Compose
+      - GKE / EKS / AKS
+      - AWS ECS / Fargate
       - 無
     help:
       title: 你知道嗎
@@ -195,7 +193,7 @@ questionnaires:
       - Prometheus
       - Icinga
       - 無
-    help:
+    help: 
       title: 你知道嗎
       description: |
         Grafana 是最受歡迎的系統監控軟體，佔 29.94%。 Prometheus 佔 17.83%。 Icinga 佔 5.41%。
@@ -208,7 +206,7 @@ questionnaires:
       - Graylog
       - CloudWatch
       - 無
-    help:
+    help: 
       title: 你知道嗎
       description: |
         CloudWatch 是最受歡迎的 Logs 管理工具，佔 27.33%。 Elastic Stack 佔 13.00%。 Graylog 佔 6.67%。
