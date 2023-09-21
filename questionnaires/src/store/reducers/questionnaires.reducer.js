@@ -7,6 +7,7 @@ export const initialState = {
   maxStep: 0,
   questions: [],
   key: "",
+  nextText: "下一題",
   loading: true,
   questionsForm: {},
   personalForm: {},
@@ -40,6 +41,11 @@ const azurePageReducer = (state, action) => {
       return {
         ...state,
         questionNo: action.payload,
+      };
+    case actionType.SET_NEXT_TEXT:
+      return {
+        ...state,
+        nextText: action.payload,
       };
     case actionType.SET_LOADING:
       return {

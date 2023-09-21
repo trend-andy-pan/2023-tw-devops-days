@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Card, CardHeader, CardBody, Divider } from "@nextui-org/react";
 import { FaRegLightbulb } from "react-icons/fa";
 
@@ -7,8 +7,15 @@ import QuestionnairesContext from "../../../../../context/questionnaires";
 export default function HelpCard({ step, index }) {
   const {
     ctxValue: { questions, step: currentStep },
+    setNextText,
   } = useContext(QuestionnairesContext);
   const { title = "你知道嗎", description = "" } = questions[index]?.help ?? {};
+
+  useEffect(() => {
+    if (currentStep === step) {
+      setNextText("下一題");
+    }
+  }, [setNextText, currentStep, step]);
 
   return (
     <Card className={`flex-0 w-full ${currentStep !== step ? "h-0" : ""}`}>

@@ -31,7 +31,16 @@ export default function App() {
   const [submitLoading, setSubmitLoading] = useState(false);
 
   const {
-    ctxValue: { step, maxStep, key, formId, loading, questions, questionNo },
+    ctxValue: {
+      step,
+      maxStep,
+      key,
+      formId,
+      loading,
+      questions,
+      questionNo,
+      nextText,
+    },
     setStep,
     setQuestionsForm,
     setPersonalForm,
@@ -133,7 +142,7 @@ export default function App() {
       case step <= maxStep - 2:
         return (
           <Button color="primary" variant="shadow" onClick={() => handleNext()}>
-            下一題
+            {nextText}
           </Button>
         );
       case step <= maxStep - 1:
@@ -144,7 +153,7 @@ export default function App() {
             onClick={() => postQuestionnaires()}
             isLoading={submitLoading}
           >
-            看結果
+            查看結果
           </Button>
         );
       case step === maxStep:
@@ -196,7 +205,7 @@ export default function App() {
               isDisabled={step <= 1}
               onClick={() => handlePrev()}
             >
-              上一題
+              上一步
             </Button>
           ) : null}
           {loading ? (
