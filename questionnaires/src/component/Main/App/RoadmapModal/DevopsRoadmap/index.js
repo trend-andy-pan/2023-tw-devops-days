@@ -824,8 +824,8 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_517"
               strokeWidth="2.7"
-              stroke={isSeceted(7, "Google Cloud", "bg")}
-              fill="rgb(156 163 175)"
+              stroke="rgb(0,0,0)"
+              fill={isSeceted(7, "Google Cloud", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -853,13 +853,13 @@ const DevopsRoadmap = ({ answers }) => {
             <rect
               id="svg_526"
               strokeWidth="2.7"
-              fill="rgb(156 163 175)"
+              fill={isSeceted(7, "Azure", "bg")}
               rx="2"
               height="44.3"
               width="140.3"
               y="851.35"
               x="430.35"
-              stroke={isSeceted(7, "Azure", "bg")}
+              stroke="rgb(0,0,0)"
             />
             <text
               id="svg_527"
@@ -886,7 +886,7 @@ const DevopsRoadmap = ({ answers }) => {
               id="svg_535"
               strokeWidth="2.7"
               stroke="rgb(0,0,0)"
-              fill={isSeceted(7, "Alibaba Cloud", "text")}
+              fill={isSeceted(7, "Alibaba Cloud", "bg")}
               rx="2"
               height="44.3"
               width="146.3"
@@ -2592,8 +2592,8 @@ const DevopsRoadmap = ({ answers }) => {
             />
           </g>
           <text
-            fill="#000000"
-            stroke={isSeceted(13, "Kubernetes", "text")}
+            fill={isSeceted(13, "Kubernetes", "text")}
+            stroke="null"
             strokeWidth="0"
             x="720"
             y="1629.5"
