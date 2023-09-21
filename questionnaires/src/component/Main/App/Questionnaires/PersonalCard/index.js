@@ -117,13 +117,6 @@ export default function PersonalCard({ step }) {
               >
                 同意
               </Radio>
-              <Radio
-                value="N"
-                description="則資料將不用於未來招募活動用途"
-                color="danger"
-              >
-                不同意
-              </Radio>
             </RadioGroup>
           )}
         />

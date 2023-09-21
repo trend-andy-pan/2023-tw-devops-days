@@ -30,6 +30,10 @@ export const QuestionnairesProvider = ({ children }) => {
     dispatch(questionnairesActions.setQuestionNo(no));
   }, []);
 
+  const setNextText = useCallback((nextText) => {
+    dispatch(questionnairesActions.setNextText(nextText));
+  }, []);
+
   const setLoading = useCallback((loading) => {
     dispatch(questionnairesActions.setLoading(loading));
   }, []);
@@ -57,6 +61,7 @@ export const QuestionnairesProvider = ({ children }) => {
     setQuestions,
     setKey,
     setQuestionNo,
+    setNextText,
     setLoading,
     setQuestionsForm,
     setPersonalForm,

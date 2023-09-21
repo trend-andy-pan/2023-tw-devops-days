@@ -35,6 +35,13 @@ export const setQuestionNo = (payload) => {
   };
 };
 
+export const setNextText = (payload) => {
+  return {
+    type: actionType.SET_NEXT_TEXT,
+    payload,
+  };
+};
+
 export const setLoading = (payload) => {
   return {
     type: actionType.SET_LOADING,

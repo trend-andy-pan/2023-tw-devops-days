@@ -30,13 +30,15 @@ export default function QuestionCard({ step, index }) {
       questionsForm: { control },
     },
     setQuestionNo,
+    setNextText,
   } = useContext(QuestionnairesContext);
 
   useEffect(() => {
     if (currentStep === step) {
       setQuestionNo(index + 1);
+      setNextText(questions[index].help ? "送出" : "下一題");
     }
-  }, [step, currentStep, setQuestionNo, index]);
+  }, [step, currentStep, setQuestionNo, index, setNextText, questions]);
 
   const {
     question = "",
