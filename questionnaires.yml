@@ -126,7 +126,7 @@ questionnaires:
     type: checkbox
     otherAnswer: false
     answers:
-      - Github Actions
+      - GitHub Actions
       - Gitlab CI
       - Jenkins
       - Circle CI
@@ -139,8 +139,8 @@ questionnaires:
     otherAnswer: true
     answers:
       - Kubernetes
-      - Docker Swarm/Compose
-      - GKE/ EKS /AKS
+      - Docker Swarm / Compose
+      - GKE / EKS / AKS
       - AWS ECS / Fargate
       - 無
   - question: 使用過的系統監控軟體?
