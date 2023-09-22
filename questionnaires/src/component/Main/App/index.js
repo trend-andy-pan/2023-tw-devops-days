@@ -47,10 +47,12 @@ export default function App() {
   } = useContext(QuestionnairesContext);
 
   const questionsForm = useForm({});
-  const { getValues: getQuestionsFormValues } = questionsForm;
+  const { getValues: getQuestionsFormValues, watch: questionsWatch } =
+    questionsForm;
 
   const personalForm = useForm({});
-  const { getValues: getPersonalFormValues } = personalForm;
+  const { getValues: getPersonalFormValues, watch: personalWatch } =
+    personalForm;
 
   useEffect(() => {
     setQuestionsForm(questionsForm);
@@ -131,6 +133,25 @@ export default function App() {
     onModalOpen();
   };
 
+  const disableNextButton = () => {
+    const answer = questionsWatch(`answer-${questionNo - 1}`);
+    if (Array.isArray(answer)) {
+      return answer.length <= 0;
+    } else {
+      return answer === "";
+    }
+  };
+
+  const disableFinishButton = () => {
+    const answer = personalWatch([
+      "name",
+      "email",
+      "company",
+      "getRecruitInfo",
+    ]);
+    return answer.filter((value) => value !== "").length < 4;
+  };
+
   const renderNextButton = () => {
     switch (true) {
       case step <= 0:
@@ -141,7 +162,12 @@ export default function App() {
         );
       case step <= maxStep - 2:
         return (
-          <Button color="primary" variant="shadow" onClick={() => handleNext()}>
+          <Button
+            color="primary"
+            variant="shadow"
+            isDisabled={disableNextButton()}
+            onClick={() => handleNext()}
+          >
             {nextText}
           </Button>
         );
@@ -150,6 +176,7 @@ export default function App() {
           <Button
             color="success"
             variant="shadow"
+            isDisabled={disableNextButton()}
             onClick={() => postQuestionnaires()}
             isLoading={submitLoading}
           >
@@ -161,6 +188,7 @@ export default function App() {
           <Button
             color="success"
             variant="shadow"
+            isDisabled={disableFinishButton()}
             onClick={() => handleSubmit()}
             isLoading={submitLoading}
           >
@@ -184,7 +212,7 @@ export default function App() {
           justify="none"
         >
           <h1 className="text-2xl max-md:text-base font-bold text-inherit">
-            {step !== 0 ? "What's your DevOps Story?" : ""}
+            {step !== 0 ? "What's Your DevOps Story?" : ""}
           </h1>
         </NavbarContent>
       </Navbar>

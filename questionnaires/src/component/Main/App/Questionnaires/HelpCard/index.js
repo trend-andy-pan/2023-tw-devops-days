@@ -7,15 +7,17 @@ import QuestionnairesContext from "../../../../../context/questionnaires";
 export default function HelpCard({ step, index }) {
   const {
     ctxValue: { questions, step: currentStep },
+    setQuestionNo,
     setNextText,
   } = useContext(QuestionnairesContext);
   const { title = "你知道嗎", description = "" } = questions[index]?.help ?? {};
 
   useEffect(() => {
     if (currentStep === step) {
+      setQuestionNo(index + 1);
       setNextText("下一題");
     }
-  }, [setNextText, currentStep, step]);
+  }, [setNextText, currentStep, step, setQuestionNo, index]);
 
   return (
     <Card className={`flex-0 w-full ${currentStep !== step ? "h-0" : ""}`}>
