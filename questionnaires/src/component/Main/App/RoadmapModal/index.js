@@ -78,7 +78,7 @@ export default function RoadmapModal({
                 color="secondary"
                 onPress={handlePress}
               >
-                按讚、分享、追蹤 FB置頂文章 抽 <strong>Nespresso 咖啡機</strong>
+                按讚 分享 追蹤 FB置頂文章 抽 <strong>Nespresso 咖啡機</strong>
               </Button>
             </ModalFooter>
           </>
