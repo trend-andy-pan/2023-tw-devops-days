@@ -1,4 +1,5 @@
 import React from "react";
+import TrendMicro from "./TrendMicro";
 
 const DevopsRoadmap = ({ answers }) => {
   const selectBgColor = "#d71920";
@@ -24,6 +25,7 @@ const DevopsRoadmap = ({ answers }) => {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="152 49 1251 2260"
       >
+        <TrendMicro x="152" y="49" width="288" height="90" />
         <g>
           <path
             stroke="rgb(43,120,228)"

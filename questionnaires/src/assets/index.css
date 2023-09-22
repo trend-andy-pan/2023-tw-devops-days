@@ -2484,6 +2484,11 @@ video {
   line-height: var(--nextui-line-height-large);
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-medium {
   font-size: var(--nextui-font-size-medium);
   line-height: var(--nextui-line-height-medium);
@@ -2501,11 +2506,6 @@ video {
 
 .text-xl {
   font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
