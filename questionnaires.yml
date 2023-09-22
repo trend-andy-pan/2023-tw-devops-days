@@ -39,7 +39,7 @@ questionnaires:
       title: 你知道嗎
       description: |
         趨勢人中，有 1~3年 DevOps 經驗的人最多，佔 37.82%。接著是 未滿一年 的答題者，佔 34.45%。 有 3~4年 經驗的答題者佔 16.81%。
-  - question: 團隊使用的程式語言？
+  - question: 您使用的程式語言？
     type: checkbox
     otherAnswer: true
     answers:
