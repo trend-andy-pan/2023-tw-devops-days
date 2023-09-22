@@ -1,4 +1,5 @@
 import React from "react";
+import TrendMicro from "./TrendMicro";
 
 const DevopsRoadmap = ({ answers }) => {
   const selectBgColor = "#d71920";
@@ -24,6 +25,7 @@ const DevopsRoadmap = ({ answers }) => {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         viewBox="152 49 1251 2260"
       >
+        <TrendMicro x="152" y="49" width="288" height="90" />
         <g>
           <path
             stroke="rgb(43,120,228)"
@@ -2705,6 +2707,18 @@ const DevopsRoadmap = ({ answers }) => {
             xmlSpace="preserve"
           >
             CloudWatch
+          </text>
+          <text
+            fill="#000000"
+            strokeWidth="0"
+            x="980"
+            y="2290"
+            id="svg_221"
+            fontSize="17px"
+            textAnchor="start"
+            xmlSpace="preserve"
+          >
+            Reference from "kamranahmedse/developer-roadmap"
           </text>
           <path
             stroke="rgb(43,120,228)"

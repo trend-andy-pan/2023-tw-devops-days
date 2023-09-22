@@ -12,6 +12,8 @@ If you have any suggestions, please get in touch with us. Thank you!
 - NextUI
 - Tailwind CSS
 - React Hook Form
+- React Icons
+- kamranahmedse/developer-roadmap (https://github.com/kamranahmedse/developer-roadmap)
 
 ## How to run on your local
 

@@ -42,26 +42,29 @@ export default function RoadmapModal({
       scrollBehavior="inside"
       hideCloseButton
       placement="center"
+      isDismissable={false}
     >
       <ModalContent>
-        {(onClose) => (
+        {() => (
           <>
             <ModalHeader className="flex flex-col gap-1">
               專屬於您的 DevOps Story
             </ModalHeader>
             <ModalBody>
               <div className="text-center">
-                <p>感謝您參與趨勢科技DevOpsDays2023限定活動</p>
-                <p>這是您專屬的DevOps Story，後續將寄送至您提供的個人信箱。</p>
+                <p>感謝您參與 趨勢科技 DevOpsDays 2023 限定活動</p>
+                <p>這是您專屬的 DevOps Story，後續將寄送至您提供的個人信箱。</p>
               </div>
               <div className="bg-white">
                 <DevopsRoadmap {...{ answers: getAllAnswers() }} />
               </div>
               <div>
+                <p>請繼續完成步驟二：</p>
                 <p className="text-danger">
-                  請繼續完成 Step2:
-                  分享FB置頂文章按讚搶先看後，到趨勢科技攤位抽獎！
+                  <strong>分享</strong> FB置頂文章 並 <strong>按讚</strong>{" "}
+                  <strong>追蹤</strong>，就可以到趨勢科技攤位抽獎喔！
                 </p>
+                <br />
                 <p>
                   活動期間 <strong>每日 下午4:10</strong> 加碼抽出{" "}
                   <strong>Nespresso 咖啡機</strong>{" "}
@@ -75,7 +78,7 @@ export default function RoadmapModal({
                 color="secondary"
                 onPress={handlePress}
               >
-                FB置頂文章 按讚分享 抽 <strong>Nespresso 咖啡機</strong>
+                按讚、分享、追蹤 FB置頂文章 抽 <strong>Nespresso 咖啡機</strong>
               </Button>
             </ModalFooter>
           </>
