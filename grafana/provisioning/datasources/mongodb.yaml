@@ -1,0 +1,22 @@
+apiVersion: 1
+datasources:
+  - name: MongoDB-airbnb
+    type: grafana-mongodb-datasource
+    access: proxy
+    url: http://devops-days_grafana-mongodb-proxy:3333
+    basicAuth: false
+    editable: true
+    enabled: true
+    jsonData:
+      mongodb_url: ${MONGODB_URL}
+      mongodb_db: sample_airbnb
+  - name: MongoDB-devops-day
+    type: grafana-mongodb-datasource
+    access: proxy
+    url: http://devops-days_grafana-mongodb-proxy:3333
+    basicAuth: false
+    editable: true
+    enabled: true
+    jsonData:
+      mongodb_url: ${MONGODB_URL}
+      mongodb_db: 2023-tw-devops-day

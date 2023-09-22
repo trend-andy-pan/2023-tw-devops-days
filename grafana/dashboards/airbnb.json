@@ -1,0 +1,102 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "grafana-mongodb-datasource",
+        "uid": "P676E28AD33FE60D5"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "series_index": 0,
+        "wordCloudOptions": {
+          "deterministic": true,
+          "enableTooltip": true,
+          "fontFamily": "arial",
+          "fontSizes": [
+            15,
+            80
+          ],
+          "padding": 1,
+          "rotationAngles": [
+            0,
+            0
+          ],
+          "rotations": 2,
+          "scale": "sqrt",
+          "spiral": "archimedean",
+          "transitionDuration": 800
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "grafana-mongodb-datasource",
+            "uid": "P676E28AD33FE60D5"
+          },
+          "rawQuery": true,
+          "refId": "A",
+          "target": "db.listingsAndReviews.aggregate(\n  [\n    {\n      \"$group\": {\n        \"_id\": \"$bed_type\",\n        \"count\": { \"$sum\": 1 }\n      }\n    }\n  ]\n);",
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "grafana-mongodb-datasource",
+            "uid": "P676E28AD33FE60D5"
+          },
+          "hide": false,
+          "rawQuery": true,
+          "refId": "B",
+          "target": "select metric",
+          "type": "timeserie"
+        }
+      ],
+      "title": "Panel Title",
+      "type": "magnesium-wordcloud-panel"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "airbnb sample",
+  "uid": "db3eb904-3c56-4268-a2f6-c7a57ca2cda5",
+  "version": 2,
+  "weekStart": ""
+}

@@ -1,0 +1,283 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "description": "TrendMicro dashboard for DevOps Days Taipei 2023",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 2,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "grafana-mongodb-datasource",
+          "uid": "PC8BB7783868B136B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "fillOpacity": 80,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineWidth": 0,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 1,
+        "options": {
+          "barRadius": 0.05,
+          "barWidth": 0.97,
+          "colorByField": "_id",
+          "fullHighlight": false,
+          "groupWidth": 0.7,
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "orientation": "auto",
+          "showValue": "never",
+          "stacking": "none",
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          },
+          "xTickLabelRotation": 0,
+          "xTickLabelSpacing": 0
+        },
+        "pluginVersion": "10.1.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "grafana-mongodb-datasource",
+              "uid": "PC8BB7783868B136B"
+            },
+            "rawQuery": true,
+            "refId": "A",
+            "target": "db.questionnaires.aggregate([\n{\"$match\": {\"answer-0\": {\"$in\": [\"未滿一年\",\"1~3年\",\"3~4年\",\"5年以上\"]}}},\n{\"$group\":{ \"_id\": \"$answer-0\", \"count\": { \"$sum\": 1}}}\n]);",
+            "type": "table"
+          }
+        ],
+        "title": "DevOps 的經驗",
+        "type": "barchart"
+      },
+      {
+        "datasource": {
+          "type": "grafana-mongodb-datasource",
+          "uid": "PC8BB7783868B136B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": []
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "legend": {
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "10.1.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "grafana-mongodb-datasource",
+              "uid": "PC8BB7783868B136B"
+            },
+            "rawQuery": true,
+            "refId": "A",
+            "target": "db.questionnaires.aggregate([\n{\"$match\": {\"answer-0\": {\"$in\": [\"未滿一年\",\"1~3年\",\"3~4年\",\"5年以上\"]}}},\n{\"$group\":{ \"_id\": \"$answer-0\", \"count\": { \"$sum\": 1}}}\n]);",
+            "type": "table"
+          }
+        ],
+        "title": "DevOps 的經驗",
+        "type": "piechart"
+      },
+      {
+        "datasource": {
+          "type": "grafana-mongodb-datasource",
+          "uid": "PC8BB7783868B136B"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "fillOpacity": 80,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineWidth": 0,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        },
+        "id": 4,
+        "options": {
+          "barRadius": 0.05,
+          "barWidth": 0.97,
+          "colorByField": "_id",
+          "fullHighlight": false,
+          "groupWidth": 0.7,
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": false
+          },
+          "orientation": "auto",
+          "showValue": "never",
+          "stacking": "none",
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          },
+          "xTickLabelRotation": 0,
+          "xTickLabelSpacing": 0
+        },
+        "pluginVersion": "10.1.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "grafana-mongodb-datasource",
+              "uid": "PC8BB7783868B136B"
+            },
+            "rawQuery": true,
+            "refId": "A",
+            "target": "db.questionnaires.aggregate([\n{\"$match\": {\"answer-2\": {\"$in\": [\"Go\"]}}},\n{\"$group\":{ \"_id\": \"$answer-2, \"count\": { \"$sum\": 1}}}\n]);",
+            "type": "table"
+          }
+        ],
+        "title": "團隊使用的程式語言",
+        "type": "barchart"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 38,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "DevOps Days Taipei 2023",
+    "uid": "b9658ab4-b507-4f8f-b5f3-8a7fa0ed67b2",
+    "version": 1,
+    "weekStart": ""
+  }
