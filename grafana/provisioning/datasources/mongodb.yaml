@@ -3,7 +3,7 @@ datasources:
   - name: MongoDB-airbnb
     type: grafana-mongodb-datasource
     access: proxy
-    url: http://host.docker.internal:3333
+    url: http://devops-days_grafana-mongodb-proxy:3333
     basicAuth: false
     editable: true
     enabled: true
@@ -13,7 +13,7 @@ datasources:
   - name: MongoDB-devops-day
     type: grafana-mongodb-datasource
     access: proxy
-    url: http://host.docker.internal:3333
+    url: http://devops-days_grafana-mongodb-proxy:3333
     basicAuth: false
     editable: true
     enabled: true
