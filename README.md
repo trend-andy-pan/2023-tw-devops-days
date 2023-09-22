@@ -22,8 +22,12 @@ If you have any suggestions, please get in touch with us. Thank you!
    ```bash
    cd questionnaires
    ```
+3. Setup Environment
+   ```
+   echo "MONGODB_URL=XXXX" > .env
+   ```
 
-3. Run Docker images
+4. Run Docker images
 
    ```bash
    make up
@@ -35,7 +39,7 @@ If you have any suggestions, please get in touch with us. Thank you!
    docker-compose up -d
    ```
 
-4. Run access docker container
+5. Run access docker container
 
    ```bash
    make exec
@@ -47,31 +51,31 @@ If you have any suggestions, please get in touch with us. Thank you!
    docker exec -it devops-days_questionnaires /bin/bash
    ```
 
-5. Install packages
+6. Install packages
 
    ```bash
    npm i
    ```
 
-6. Run CSS monitor
+7. Run CSS monitor
 
    ```bash
    npm run css
    ```
 
-7. Run develop server (using other term or stop CSS monitor)
+8. Run develop server (using other term or stop CSS monitor)
 
    ```bash
    npm start
    ```
 
-8. Go to website via your browser
+9.  Go to website via your browser
 
    ```
    localhost:8008
    ```
 
-9. Enjoy!
+10.  Enjoy!
 
 ## How to run grafana on your local
 
