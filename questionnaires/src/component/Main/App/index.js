@@ -184,7 +184,7 @@ export default function App() {
           justify="none"
         >
           <h1 className="text-2xl max-md:text-base font-bold text-inherit">
-            {step !== 0 ? "What's your DevOps Story?" : ""}
+            {step !== 0 ? "What's Your DevOps Story?" : ""}
           </h1>
         </NavbarContent>
       </Navbar>
