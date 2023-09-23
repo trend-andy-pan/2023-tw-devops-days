@@ -14,15 +14,17 @@ jobs:
     steps:
       - name: Questionnaires data
         if: github.event.client_payload.questionnaires != ''
-        env:
-          QUESTIONNAIRES_DATA: ${{ github.event.client_payload.questionnaires }}
-        run: echo $QUESTIONNAIRES_DATA > questionnaires.json
+        run: |
+          SECRET_VALUE=$(cat $GITHUB_EVENT_PATH | jq -r '.client_payload.questionnaires' )
+          echo "::add-mask::$SECRET_VALUE"
+          echo $SECRET_VALUE > questionnaires.json
 
       - name: Users data
         if: github.event.client_payload.users != ''
-        env:
-          USERS_DATA: ${{ github.event.client_payload.users }}
-        run: echo $USERS_DATA > users.json
+        run: |
+          SECRET_VALUE=$(cat $GITHUB_EVENT_PATH | jq -r '.client_payload.users' )
+          echo "::add-mask::$SECRET_VALUE"
+          echo $SECRET_VALUE > users.json
 
       - name: Cache MongoDB tools
         id: mongodb-tool-cache
