@@ -142,7 +142,17 @@ questionnaires:
     help:
       title: 你知道嗎
       description: |
-        Github 是最受歡迎的版本控制服務，約 45.17% 的趨勢人使用它。
+        Github 是最受歡迎的版本控制服務，約 83.57% 的趨勢人使用它。
+      Chart:
+        labels:
+          - GitHub
+          - GitLab
+          - 其他
+        data:
+          - 83.57
+          - 15.71
+          - 0.71
+
   - question: 目前使用的專案管理工具?
     type: checkbox
     otherAnswer: true
