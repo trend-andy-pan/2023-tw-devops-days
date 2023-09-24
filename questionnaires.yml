@@ -11,6 +11,11 @@ questionnaires:
   #   help: 說明
   #     title: 標題
   #     description: 內容
+  #     Chart:
+  #       labels:
+  #         - 答案1
+  #       data:
+  #         - 值1
 
   - question: 你的工作性質屬於？
     type: radio
@@ -30,17 +35,19 @@ questionnaires:
         labels:
           - SRE
           - DevOps
-          - Backend Developer
-          - Frontend Developer
-          - Full Stack Developer
+          - Backend
+          - Frontend
+          - Full Stack
           - QA
+          - Others
         data:
-          - 5.04
+          - 10.08
           - 19.33
           - 31.93
-          - 5.88
+          - 4.20
           - 11.76
-          - 3.36
+          - 6.72
+          - 15.97
 
   - question: DevOps 的經驗
     type: radio
@@ -54,6 +61,18 @@ questionnaires:
       title: 你知道嗎
       description: |
         趨勢人中，有 1~3年 DevOps 經驗的人最多，佔 37.82%。接著是 未滿一年 的答題者，佔 34.45%。 有 3~4年 經驗的答題者佔 16.81%。
+      Chart:
+        labels:
+          - 未滿一年
+          - 1~3年
+          - 3~4年
+          - 5年以上
+        data:
+          - 34.45
+          - 37.82
+          - 16.81
+          - 10.92
+
   - question: 您使用的程式語言？
     type: checkbox
     otherAnswer: true
@@ -68,7 +87,27 @@ questionnaires:
     help:
       title: 你知道嗎
       description: |
-        趨勢人中，Python 是最受歡迎的程式語言，約 26.05% 的答題者的團隊使用它。 其他受歡迎的程式語言包括 Go (10.53%)、Javascript (8.42%) 和 Java (6.32%)。 Node.js 和 C/C++ 也有一定的使用率，分別為 5.26% 和 5.00%。
+        趨勢人中，Python 是最受歡迎的程式語言，約 37.93% 的答題者的團隊使用它。 其他受歡迎的程式語言包括 Go (15.33%)、Javascript (12.26%) 和 .Net (7.66%)。 Java 和 PHP 也有一定的使用率，分別為 7.28% 和 9.2%。
+      Chart:
+        labels:
+          - Python
+          - Go
+          - JavaScript
+          - .Net
+          - C/C++
+          - Java
+          - PHP
+          - 其他
+        data:
+          - 37.93
+          - 15.33
+          - 12.26
+          - 7.66
+          - 4.60
+          - 7.28
+          - 9.20
+          - 5.75
+
   - question: 是否有接觸過網絡協議的相關經驗？
     type: radio
     otherAnswer: false
@@ -81,6 +120,18 @@ questionnaires:
       title: 你知道嗎
       description: |
         趨勢人中，剛入門 的答題者最多，佔 38.66%。 這個世界好難懂 的答題者佔 28.57%。 已上手 的答題者佔 26.89%。 熟門熟路 的答題者佔 5.88% 這表示網路協議相關的任務主要集中在特定的團隊。
+      Chart:
+        labels:
+          - 剛入門
+          - 已上手
+          - 熟門熟路
+          - 這個世界好難懂
+        data:
+          - 38.66
+          - 26.89
+          - 5.88
+          - 28.57
+
   - question: 目前使用的版本控制服務?
     type: checkbox
     otherAnswer: true
@@ -104,7 +155,21 @@ questionnaires:
     help:
       title: 你知道嗎
       description: |
-        Jira 是最受歡迎的專案管理工具，約 34.66% 的趨勢人使用它。 Confluence 佔 26.38%。 Trello 的使用率較低，僅佔 1.84%。
+        Jira 是最受歡迎的專案管理工具，約 54.59% 的趨勢人使用它。 Confluence 佔 41.55%。 Trello 的使用率較低，僅佔 2.9%。
+      Chart:
+        labels:
+          - Jira
+          - Confluence
+          - ClickUp
+          - Trello
+          - 無
+        data:
+          - 54.59
+          - 41.55
+          - 0.00
+          - 2.90
+          - 0.97
+
   - question: 開發過的專案中，自動化測試有包含什麼項目呢？
     type: checkbox
     otherAnswer: true
@@ -119,7 +184,27 @@ questionnaires:
     help:
       title: 你知道嗎
       description: |
-        單元測試 (Unit testing) 是最常見的自動化測試類型，佔 18.55%。 端到端測試 (End-to-end testing) 佔 14.11%。 整合測試 (Integration testing) 佔 13.10%。 API 測試 (Api testing) 佔 12.30%。 靜態代碼分析 (Static Code Analysis) 佔 9.88%。 效能測試 (Performance testing) 佔 6.05%。
+        單元測試 (Unit testing) 是最常見的自動化測試類型，佔 24.4%。 端點對端點測試 (End-to-end testing) 佔 18.57%。 整合測試 (Integration testing) 佔 17.24%。 API 測試 (API testing) 佔 16.18%。 靜態代碼分析 (Static Code Analysis) 佔 13%。 效能測試 (Performance testing) 佔 7.96%。
+      Chart:
+        labels:
+          - Unit testing
+          - API testing
+          - End-to-end testing
+          - Integration testing
+          - Performance testing
+          - Static Code Analysis
+          - 無
+          - 其他
+        data:
+          - 24.40
+          - 16.18
+          - 18.57
+          - 17.24
+          - 7.96
+          - 13.00
+          - 2.12
+          - 0.53
+
   - question: 使用的雲端服務?
     type: checkbox
     otherAnswer: true
@@ -138,6 +223,7 @@ questionnaires:
       - Virtual Machines
       - Containers
       - Serverless
+
   - question: 使用中的基礎設施部署工具
     type: checkbox
     otherAnswer: true
@@ -150,7 +236,23 @@ questionnaires:
     help:
       title: 你知道嗎
       description: |
-        Terraform 是最受歡迎的基礎設施部署工具，佔 20.24%。 Serverless 佔 14.50%。 CloudFormation 佔 13.60%。 AWS CDK 佔 6.95%。
+        Terraform 是最受歡迎的基礎設施部署工具，佔 31.6%。 Serverless 佔 22.64%。 CloudFormation 佔 21.23%。 AWS CDK 佔 10.85%。
+      Chart:
+        labels:
+          - AWS CDK
+          - CloudFormation
+          - Terraform
+          - Serverless
+          - 無
+          - 其他
+        data:
+          - 10.85
+          - 21.23
+          - 31.60
+          - 22.64
+          - 10.38
+          - 3.30
+
   - question: 是否使用過 Secret management 管理密碼、API 密鑰和其他機密資訊的經驗？
     type: radio
     otherAnswer: false
@@ -161,6 +263,14 @@ questionnaires:
       title: 你知道嗎
       description: |
         趨勢人中，75.63% 的答題者表示他們有使用過 Secret management。 這意味著大多數的趨勢團隊都有導入 Secret management 的工具。
+      Chart:
+        labels:
+          - "Yes"
+          - "No"
+        data:
+          - 75.63
+          - 24.37
+
   - question: 使用的配置管理工具?
     type: checkbox
     otherAnswer: true
@@ -185,7 +295,27 @@ questionnaires:
     help:
       title: 你知道嗎
       description: |
-        Github Actions 是最受歡迎的 CI/CD 工具，佔 30.56%。 Jenkins 佔 22.84%。Azure DevOps Services 佔 3.09%。
+        Github Actions 是最受歡迎的 CI/CD 工具，佔 48.29%。 Jenkins 佔 36.1%。Azure DevOps Services 佔 4.88%。
+      Chart:
+        labels:
+          - GitHub Actions
+          - Gitlab CI
+          - Jenkins
+          - Circle CI
+          - Travis CI
+          - Azure DevOps Services
+          - 無
+          - 其他
+        data:
+          - 48.29
+          - 2.93
+          - 36.10
+          - 2.93
+          - 0.98
+          - 4.88
+          - 2.44
+          - 1.46
+
   - question: 使用的容器化管理工具?
     type: checkbox
     otherAnswer: true
@@ -198,7 +328,23 @@ questionnaires:
     help:
       title: 你知道嗎
       description: |
-        Kubernetes 是最受歡迎的容器化管理工具，佔 17.58%。 AWS ECS 佔 16.14%。 GKE / EKS / AKS 佔 14.12%。 Docker Swarm/Compose 佔 12.39%。
+        Kubernetes 是最受歡迎的容器化管理工具，佔 26.75%。 AWS ECS 佔 24.56%。 GKE / EKS / AKS 佔 21.49%。 Docker Swarm/Compose 佔 18.86%。
+      Chart:
+        labels:
+          - Kubernetes
+          - Docker Swarm / Compose
+          - GKE / EKS / AKS
+          - AWS ECS / Fargate
+          - 無
+          - 其他
+        data:
+          - 26.75
+          - 18.86
+          - 21.49
+          - 24.56
+          - 7.89
+          - 0.44
+
   - question: 使用過的系統監控軟體?
     type: checkbox
     otherAnswer: true
@@ -211,7 +357,23 @@ questionnaires:
     help:
       title: 你知道嗎
       description: |
-        Grafana 是最受歡迎的系統監控軟體，佔 29.94%。 Prometheus 佔 17.83%。 Icinga 佔 5.41%。
+        Grafana 是最受歡迎的系統監控軟體，佔 48.21%。 Prometheus 佔 28.72%。
+      Chart:
+        labels:
+          - Grafana
+          - Datadog
+          - Prometheus
+          - Icinga
+          - 無
+          - 其他
+        data:
+          - 48.21
+          - 2.56
+          - 28.72
+          - 8.72
+          - 9.74
+          - 2.05
+
   - question: 使用過的 Logs 管理工具?
     type: checkbox
     otherAnswer: true
@@ -224,4 +386,19 @@ questionnaires:
     help:
       title: 你知道嗎
       description: |
-        CloudWatch 是最受歡迎的 Logs 管理工具，佔 27.33%。 Elastic Stack 佔 13.00%。 Graylog 佔 6.67%。
+        CloudWatch 是最受歡迎的 Logs 管理工具，佔 45.3%。 Elastic Stack 佔 21.55%。 Graylog 佔 11.05%。
+      Chart:
+        labels:
+          - Elastic Stack
+          - Loki
+          - Graylog
+          - CloudWatch
+          - 無
+          - 其他
+        data:
+          - 21.55
+          - 10.50
+          - 11.05
+          - 45.30
+          - 9.94
+          - 1.66
