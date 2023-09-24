@@ -14,6 +14,7 @@ If you have any suggestions, please get in touch with us. Thank you!
 - React Hook Form
 - React Icons
 - kamranahmedse/developer-roadmap (https://github.com/kamranahmedse/developer-roadmap)
+- react-chartjs-2
 
 ## How to run on your local
 
@@ -24,7 +25,9 @@ If you have any suggestions, please get in touch with us. Thank you!
    ```bash
    cd questionnaires
    ```
+
 3. Setup Environment
+
    ```
    echo "MONGODB_URL=XXXX" > .env
    ```
@@ -71,13 +74,13 @@ If you have any suggestions, please get in touch with us. Thank you!
    npm start
    ```
 
-9.  Go to website via your browser
+9. Go to website via your browser
 
-   ```
-   localhost:8008
-   ```
+```
+localhost:8008
+```
 
-10.  Enjoy!
+10. Enjoy!
 
 ## How to run grafana on your local
 
