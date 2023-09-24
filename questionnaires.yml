@@ -97,14 +97,14 @@ questionnaires:
     otherAnswer: true
     answers:
       - Jira
-      - Jarvis Wiki (Confluence)
+      - Confluence
       - ClickUp
       - Trello
       - 無
     help:
       title: 你知道嗎
       description: |
-        Jira 是最受歡迎的專案管理工具，約 34.66% 的趨勢人使用它。 Jarvis Wiki (Confluence) 佔 26.38%。 Trello 的使用率較低，僅佔 1.84%。
+        Jira 是最受歡迎的專案管理工具，約 34.66% 的趨勢人使用它。 Confluence 佔 26.38%。 Trello 的使用率較低，僅佔 1.84%。
   - question: 開發過的專案中，自動化測試有包含什麼項目呢？
     type: checkbox
     otherAnswer: true
