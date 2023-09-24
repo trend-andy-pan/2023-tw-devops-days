@@ -29,7 +29,9 @@ If you have any suggestions, please get in touch with us. Thank you!
 3. Setup Environment
 
    ```
-   echo "MONGODB_URL=XXXX" > .env
+   echo "MONGODB_URL=XXX" > .env
+   echo "GF_SECURITY_ADMIN_USER=YYY" >> .env
+   echo "GF_SECURITY_ADMIN_PASSWORD=ZZZ" >> .env
    ```
 
 4. Run Docker images
