@@ -9,6 +9,7 @@ import {
   Colors,
 } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
 import QuestionnairesContext from "../../../../../context/questionnaires";
 
@@ -31,7 +32,7 @@ export default function HelpCard({ step, index }) {
     }
   }, [setNextText, currentStep, step, setQuestionNo, index]);
 
-  ChartJS.register(ArcElement, Tooltip, Legend, Colors);
+  ChartJS.register(ArcElement, Tooltip, Legend, Colors, ChartDataLabels);
 
   return (
     <Card className={`flex-0 w-full ${currentStep !== step ? "h-0" : ""}`}>
@@ -46,6 +47,7 @@ export default function HelpCard({ step, index }) {
         <p>{description}</p>
         {Chart ? (
           <Doughnut
+            className="mt-5"
             data={{
               labels: Chart.labels,
               datasets: [
@@ -53,6 +55,17 @@ export default function HelpCard({ step, index }) {
                   data: Chart.data,
                 },
               ],
+            }}
+            options={{
+              plugins: {
+                datalabels: {
+                  display: true,
+                  color: "white",
+                },
+                legend: {
+                  position: "bottom",
+                },
+              },
             }}
           />
         ) : null}
