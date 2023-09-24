@@ -26,15 +26,7 @@ If you have any suggestions, please get in touch with us. Thank you!
    cd questionnaires
    ```
 
-3. Setup Environment
-
-   ```
-   echo "MONGODB_URL=XXX" > .env
-   echo "GF_SECURITY_ADMIN_USER=YYY" >> .env
-   echo "GF_SECURITY_ADMIN_PASSWORD=ZZZ" >> .env
-   ```
-
-4. Run Docker images
+3. Run Docker images
 
    ```bash
    make up
@@ -46,7 +38,7 @@ If you have any suggestions, please get in touch with us. Thank you!
    docker-compose up -d
    ```
 
-5. Run access docker container
+4. Run access docker container
 
    ```bash
    make exec
@@ -58,25 +50,25 @@ If you have any suggestions, please get in touch with us. Thank you!
    docker exec -it devops-days_questionnaires /bin/bash
    ```
 
-6. Install packages
+5. Install packages
 
    ```bash
    npm i
    ```
 
-7. Run CSS monitor
+6. Run CSS monitor
 
    ```bash
    npm run css
    ```
 
-8. Run develop server (using other term or stop CSS monitor)
+7. Run develop server (using other term or stop CSS monitor)
 
    ```bash
    npm start
    ```
 
-9. Go to website via your browser
+8. Go to website via your browser
 
 ```
 localhost:8008
@@ -86,21 +78,29 @@ localhost:8008
 
 ## How to run grafana on your local
 
-1. Run server via docker-composer
+1. Setup Environment
+
+   ```
+   echo "MONGODB_URL=XXX" > .env
+   echo "GF_SECURITY_ADMIN_USER=YYY" >> .env
+   echo "GF_SECURITY_ADMIN_PASSWORD=ZZZ" >> .env
+   ```
+
+2. Run server via docker-composer
 
    ```
    docker-compose up -d --remove-orphans
    ```
 
-2. Using default account to login
+3. Using default account to login
 
    ```
-   admin
-   admin
+   user: YYY
+   password: ZZZ
    ```
 
-3. Setting resource path
+4. Setting resource path
 
-4. Go to dashboard
+5. Go to dashboard
 
-5. Enjoy!
+6. Enjoy!
