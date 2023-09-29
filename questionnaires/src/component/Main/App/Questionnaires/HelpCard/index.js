@@ -1,6 +1,15 @@
 import React, { useContext, useEffect } from "react";
 import { Card, CardHeader, CardBody, Divider } from "@nextui-org/react";
 import { FaRegLightbulb } from "react-icons/fa";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  Colors,
+} from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
 import QuestionnairesContext from "../../../../../context/questionnaires";
 
@@ -10,7 +19,11 @@ export default function HelpCard({ step, index }) {
     setQuestionNo,
     setNextText,
   } = useContext(QuestionnairesContext);
-  const { title = "你知道嗎", description = "" } = questions[index]?.help ?? {};
+  const {
+    title = "你知道嗎",
+    description = "",
+    Chart,
+  } = questions[index]?.help ?? {};
 
   useEffect(() => {
     if (currentStep === step) {
@@ -18,6 +31,8 @@ export default function HelpCard({ step, index }) {
       setNextText("下一題");
     }
   }, [setNextText, currentStep, step, setQuestionNo, index]);
+
+  ChartJS.register(ArcElement, Tooltip, Legend, Colors, ChartDataLabels);
 
   return (
     <Card className={`flex-0 w-full ${currentStep !== step ? "h-0" : ""}`}>
@@ -30,6 +45,30 @@ export default function HelpCard({ step, index }) {
       <Divider />
       <CardBody>
         <p>{description}</p>
+        {Chart ? (
+          <Doughnut
+            className="mt-5"
+            data={{
+              labels: Chart.labels,
+              datasets: [
+                {
+                  data: Chart.data,
+                },
+              ],
+            }}
+            options={{
+              plugins: {
+                datalabels: {
+                  display: true,
+                  color: "white",
+                },
+                legend: {
+                  position: "bottom",
+                },
+              },
+            }}
+          />
+        ) : null}
       </CardBody>
     </Card>
   );
