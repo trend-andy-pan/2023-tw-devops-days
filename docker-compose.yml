@@ -34,6 +34,18 @@ services:
         cd mongodb_grafana
         npm i && npm run server
 
+  report:
+    container_name: devops-days_report
+    networks:
+      - LAN
+    build:
+      context: ./report
+      dockerfile: Dockerfile
+    tty: true
+    working_dir: /app
+    volumes:
+      - ./report:/app
+
 networks:
   LAN:
     driver: bridge
