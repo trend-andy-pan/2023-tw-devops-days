@@ -19,6 +19,7 @@ import Questionnaires from "./Questionnaires";
 import logoImg from "../../../assets/TrendMicroLogo.png";
 import "./index.css";
 import RoadmapModal from "./RoadmapModal";
+import NoticeCard from "./NoticeCard";
 
 export default function App() {
   const bearer =
@@ -217,6 +218,7 @@ export default function App() {
         </NavbarContent>
       </Navbar>
       <article className="flex-grow px-6 pt-6 max-md:px-3 max-md:pt-3">
+        <NoticeCard />
         <Questionnaires />
         <RoadmapModal {...{ isModalOpen, onModalClose }} />
       </article>
