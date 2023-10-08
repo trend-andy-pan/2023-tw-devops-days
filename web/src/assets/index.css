@@ -1866,6 +1866,14 @@ video {
   border-bottom-width: var(--nextui-border-width-medium);
 }
 
+.border-l-4 {
+  border-left-width: 4px;
+}
+
+.border-l-1 {
+  border-left-width: 1px;
+}
+
 .border-solid {
   border-style: solid;
 }
@@ -2448,6 +2456,10 @@ video {
 
 .pt-6 {
   padding-top: 1.5rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
 }
 
 .text-left {
