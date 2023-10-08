@@ -20,34 +20,34 @@ If you have any suggestions, please get in touch with us. Thank you!
 
 1. Install docker
 
-2. Go to questionnaires folder
+2. Setup Environment
 
-   ```bash
-   cd questionnaires
+   ```
+   echo "" > .env
    ```
 
 3. Run Docker images
 
    ```bash
-   make up
+   make up.web
    ```
 
    or
 
    ```bash
-   docker-compose up -d
+   docker-compose up web -d
    ```
 
 4. Run access docker container
 
    ```bash
-   make exec
+   make exec.web
    ```
 
    or
 
    ```bash
-   docker exec -it devops-days_questionnaires /bin/bash
+   docker exec -it devops-days_web /bin/bash
    ```
 
 5. Install packages
@@ -70,11 +70,11 @@ If you have any suggestions, please get in touch with us. Thank you!
 
 8. Go to website via your browser
 
-```
-localhost:8008
-```
+   ```
+   localhost:8008
+   ```
 
-10. Enjoy!
+9. Enjoy!
 
 ## How to run grafana on your local
 

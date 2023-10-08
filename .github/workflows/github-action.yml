@@ -70,20 +70,20 @@ jobs:
           node-version: "18.x"
 
       - name: Install dependencies
-        working-directory: ./questionnaires
+        working-directory: ./web
         run: npm install
 
       - name: Build
-        working-directory: ./questionnaires
+        working-directory: ./web
         run: npm run build
 
       - name: Move questionnaires.yml file to build directory
-        run: mv questionnaires.yml ./questionnaires/build
+        run: mv questionnaires.yml ./web/build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: ./questionnaires/build
+          folder: ./web/build
           git-config-name: "GitHub Actions Deploy"
           commit-message: "release: v1.0.${{ github.run_number }}"

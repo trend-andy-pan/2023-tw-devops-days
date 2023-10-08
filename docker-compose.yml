@@ -46,6 +46,18 @@ services:
     volumes:
       - ./report:/app
 
+  web:
+    container_name: devops-days_web
+    networks:
+      - LAN
+    image: node:18
+    tty: true
+    ports:
+      - 8008:3000
+    working_dir: /web
+    volumes:
+      - ./web:/web
+
 networks:
   LAN:
     driver: bridge
