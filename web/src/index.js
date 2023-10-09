@@ -7,8 +7,7 @@ import { QuestionnairesProvider } from "./context/questionnaires";
 
 import ErrorPage from "./component/ErrorPage";
 import Main from "./component/Main";
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
+import ResultPage from "./component/ResultPage";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +21,13 @@ const router = createBrowserRouter([
     ),
     errorElement: <ErrorPage />,
   },
+  {
+    path: "/result",
+    element: <ResultPage />,
+  },
 ]);
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <NextUIProvider>
     <RouterProvider router={router} />
