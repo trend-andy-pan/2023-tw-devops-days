@@ -6389,8 +6389,20 @@ body {
     margin-bottom: 0.25rem;
   }
 
+  .max-md\:h-96 {
+    height: 24rem;
+  }
+
+  .max-md\:h-screen {
+    height: 100vh;
+  }
+
   .max-md\:basis-full {
     flex-basis: 100%;
+  }
+
+  .max-md\:gap-1 {
+    gap: 0.25rem;
   }
 
   .max-md\:px-1 {
@@ -6415,6 +6427,11 @@ body {
   .max-md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .max-md\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 

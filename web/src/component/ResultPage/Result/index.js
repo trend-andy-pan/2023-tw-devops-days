@@ -37,7 +37,11 @@ export default function Result() {
               {item.question}
             </h2>
           </CardHeader>
-          <CardBody className={`${item.type === "wordCloud" && "h-96"}`}>
+          <CardBody
+            className={`${item.type === "wordCloud" && "h-96"} max-md:${
+              item.maxMdHeight ?? "h-96"
+            }`}
+          >
             <Chart
               type={item.type}
               data={item.data}

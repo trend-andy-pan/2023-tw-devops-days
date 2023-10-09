@@ -1,3 +1,5 @@
+export const maxMd = window.innerWidth < 768 ? true : false;
+
 const defaultOptions = {
   plugins: {
     datalabels: {
@@ -103,6 +105,7 @@ export const chartOptions = (value) => ({
     responsive: true,
   },
   pie: {
+    maintainAspectRatio: maxMd ? false : true,
     plugins: {
       ...defaultOptions.plugins,
       datalabels: {
@@ -121,12 +124,13 @@ export const chartOptions = (value) => ({
         },
       },
     },
-    radius: "75%",
+    radius: maxMd ? "100%" : "75%",
     responsive: true,
   },
   doughnut: {
     ...defaultOptions,
-    radius: "75%",
+    maintainAspectRatio: maxMd ? false : true,
+    radius: maxMd ? "100%" : "75%",
     responsive: true,
   },
 });
