@@ -2,7 +2,7 @@
   "name": "questionnaires",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://trendmicro.github.io/2023-tw-devops-days/",
+  "homepage": "https://trendmicro.github.io/2023-tw-devops-days/#",
   "dependencies": {
     "@nextui-org/react": "^2.1.10",
     "@testing-library/jest-dom": "^5.17.0",

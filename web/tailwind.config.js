@@ -1,4 +1,5 @@
 const { nextui } = require("@nextui-org/react");
+const { DefinePlugin } = require("webpack");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -23,5 +24,12 @@ module.exports = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [
+    nextui(),
+    new DefinePlugin({
+      "process.env.HASH_ROUTER": JSON.stringify(
+        process.env.HASH_ROUTER || "false"
+      ),
+    }),
+  ],
 };

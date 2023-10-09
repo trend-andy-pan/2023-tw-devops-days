@@ -75,6 +75,8 @@ jobs:
 
       - name: Build
         working-directory: ./web
+        env:
+          HASH_ROUTER: true
         run: npm run build
 
       - name: Move questionnaires.yml file to build directory
