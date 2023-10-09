@@ -6,7 +6,7 @@ export default function Footer() {
     <div className="max-md:my-1 my-8">
       <Card className="bg-transparent" fullWidth>
         <CardBody>
-          <div className="flex flex-row gap-3 text-2xl justify-center">
+          <div className="flex flex-row gap-3 max-md:gap-1 text-2xl max-md:text-base justify-center">
             <p>問卷人數：</p>
             <AnimatedNumbers
               animateToNumber={367}

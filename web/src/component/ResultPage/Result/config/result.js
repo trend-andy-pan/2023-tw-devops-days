@@ -1,3 +1,4 @@
+import { maxMd } from "./chartOptions";
 import data from "./data";
 
 const result = [
@@ -7,6 +8,11 @@ const result = [
     type: "wordCloud",
     key: "question1",
     basis: "basis-full",
+    chartOptions: {
+      basicFontSize: maxMd ? 14 : 34,
+      maxValue: 367,
+      maxFontSize: maxMd ? 52 : 228,
+    },
     data: {
       labels: data.answer01.map((item) => item._id),
       datasets: [
@@ -30,7 +36,7 @@ const result = [
           backgroundColor: "rgb(113 63 18)", // text-900
           borderColor: "rgb(202 138 4)", // text-600
           borderWidth: 2,
-          borderRadius: 16,
+          borderRadius: maxMd ? 4 : 8,
         },
       ],
     },
@@ -42,9 +48,9 @@ const result = [
     key: "question3",
     basis: "basis-1/3",
     chartOptions: {
-      basicFontSize: 36,
+      basicFontSize: maxMd ? 21 : 36,
       maxValue: 639,
-      maxFontSize: 150,
+      maxFontSize: maxMd ? 68 : 310,
     },
     data: {
       labels: data.answer03.map((item) => item._id),
@@ -63,7 +69,9 @@ const result = [
     basis: "basis-1/3",
     chartOptions: {
       formatter: (value, context) =>
-        context.chart.data.labels[context.dataIndex] + ": " + value + "人",
+        maxMd
+          ? value
+          : context.chart.data.labels[context.dataIndex] + ": " + value + "人",
       tooltip: { enabled: false },
     },
     data: {
@@ -81,6 +89,13 @@ const result = [
     type: "bar",
     key: "question5",
     basis: "basis-1/3",
+    chartOptions: {
+      indexAxis: maxMd ? "y" : "x",
+      scales: {
+        x: { grid: { display: maxMd ? true : false } },
+        y: { grid: { display: maxMd ? false : true } },
+      },
+    },
     data: {
       labels: data.answer05.map((item) => item._id),
       datasets: [
@@ -89,7 +104,7 @@ const result = [
           backgroundColor: "rgb(6 78 59)", // text-900
           borderColor: "rgb(5 150 105)", // text-600
           borderWidth: 2,
-          borderRadius: 8,
+          borderRadius: maxMd ? 4 : 8,
         },
       ],
     },
@@ -100,9 +115,10 @@ const result = [
     type: "bar",
     key: "question6",
     basis: "basis-full",
+    maxMdHeight: "h-screen",
     chartOptions: {
       indexAxis: "y",
-      maintainAspectRatio: true,
+      maintainAspectRatio: maxMd ? false : true,
       scales: {
         x: { grid: { display: true } },
         y: { grid: { display: false } },
@@ -116,7 +132,7 @@ const result = [
           backgroundColor: "rgb(12 74 110)", // text-900
           borderColor: "rgb(2 132 199)", // text-600
           borderWidth: 2,
-          borderRadius: 8,
+          borderRadius: maxMd ? 4 : 8,
         },
       ],
     },
@@ -135,7 +151,7 @@ const result = [
           backgroundColor: "rgb(76 29 149)", // text-900
           borderColor: "rgb(124 58 237)", // text-600
           borderWidth: 2,
-          borderRadius: 8,
+          borderRadius: maxMd ? 4 : 8,
         },
       ],
     },
@@ -147,9 +163,9 @@ const result = [
     key: "question8",
     basis: "basis-1/3",
     chartOptions: {
-      basicFontSize: 24,
+      basicFontSize: maxMd ? 18 : 24,
       maxValue: 565,
-      maxFontSize: 150,
+      maxFontSize: maxMd ? 60 : 200,
     },
     data: {
       labels: data.answer08.map((item) => item._id),
@@ -196,7 +212,7 @@ const result = [
           backgroundColor: "rgb(124 45 18)", // text-900
           borderColor: "rgb(234 88 12)", // text-600
           borderWidth: 2,
-          borderRadius: 8,
+          borderRadius: maxMd ? 4 : 8,
         },
       ],
     },
@@ -231,7 +247,7 @@ const result = [
           backgroundColor: "rgb(6 78 59)", // text-900
           borderColor: "rgb(5 150 105)", // text-600
           borderWidth: 2,
-          borderRadius: 8,
+          borderRadius: maxMd ? 4 : 8,
         },
       ],
     },
@@ -265,7 +281,7 @@ const result = [
           backgroundColor: "rgb(76 29 149)", // text-900
           borderColor: "rgb(124 58 237)", // text-600
           borderWidth: 2,
-          borderRadius: 8,
+          borderRadius: maxMd ? 4 : 8,
         },
       ],
     },
@@ -277,9 +293,9 @@ const result = [
     key: "question15",
     basis: "basis-1/3",
     chartOptions: {
-      basicFontSize: 36,
+      basicFontSize: maxMd ? 16 : 36,
       maxValue: 559,
-      maxFontSize: 200,
+      maxFontSize: maxMd ? 64 : 200,
     },
     data: {
       labels: data.answer15.map((item) => item._id),
