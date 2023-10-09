@@ -30,10 +30,7 @@ export default function Result() {
   return (
     <div className="flex gap-3 flex-wrap max-md:px-3">
       {result.map((item) => (
-        <Card
-          className={`basis-${item.basis} max-md:basis-full grow`}
-          key={item.key}
-        >
+        <Card className={`${item.basis} max-md:basis-full grow`} key={item.key}>
           <CardHeader className="z-10 top-1 flex-col items-start">
             <p className="text-tiny text-white/60 font-bold">{item.title}</p>
             <h2 className="text-white font-medium text-large">
