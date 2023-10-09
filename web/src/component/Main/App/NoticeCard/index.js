@@ -8,7 +8,8 @@ export default function NoticeCard({ step }) {
       <CardHeader className="flex gap-3">
         <PiWarningOctagonDuotone className="w-8 h-8" />
         <p className="text-lg">
-          注意：此問卷已停止收集，感謝您的參與！此頁面僅供學術研究用途，如有任何疑問請洽趨勢科技。
+          注意：此問卷已 <strong>停止資料收集</strong>
+          ，感謝您的參與！僅供學術參考使用，如有任何疑問請洽 趨勢科技。
         </p>
       </CardHeader>
     </Card>
