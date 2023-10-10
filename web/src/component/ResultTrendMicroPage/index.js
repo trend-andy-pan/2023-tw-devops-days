@@ -13,11 +13,14 @@ export default function ResultPage() {
   }, []);
 
   return (
-    <main className="max-md:px-1 max-md:pb-1 px-8 pb-8 bg-TrendMicro bg-fixed">
+    <main>
+      <div className="bg-TrendMicro w-screen h-screen fixed" />
       <Header h1="This Is Trend Micro DevOps Story!" />
-      <Title />
-      <ResultTrendMicro />
-      <Copyright />
+      <section className="max-md:px-1 max-md:pb-1 px-8 pb-8">
+        <Title />
+        <ResultTrendMicro />
+        <Copyright />
+      </section>
     </main>
   );
 }
