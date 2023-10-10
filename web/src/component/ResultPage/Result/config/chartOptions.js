@@ -120,7 +120,7 @@ export const chartOptions = (value) => ({
         enabled: value.tooltip?.enabled ?? true,
         callbacks: {
           title: () => "",
-          label: (v) => ` ${v.label}: ${v.raw} 人`,
+          label: (v) => ` ${v.label}: ${v.raw}`,
         },
       },
     },

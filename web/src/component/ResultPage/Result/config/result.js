@@ -1,6 +1,19 @@
 import { maxMd } from "./chartOptions";
 import data from "./data";
 
+const getPercentage = (
+  value,
+  context,
+  fixed = 2,
+  hideZero = false,
+  withBrackets = true
+) => {
+  const total = context.chart.getDatasetMeta(0).total;
+  const percentage = ((value * 100) / total).toFixed(fixed);
+  if (hideZero && percentage <= 1) return "";
+  return withBrackets ? `(${percentage}%)` : `${percentage}%`;
+};
+
 const result = [
   {
     title: "問題一",
@@ -43,7 +56,7 @@ const result = [
   },
   {
     title: "問題三",
-    question: "您使用的程式語言？",
+    question: "您使用的程式語言？(複選)",
     type: "wordCloud",
     key: "question3",
     basis: "basis-1/3",
@@ -70,8 +83,8 @@ const result = [
     chartOptions: {
       formatter: (value, context) =>
         maxMd
-          ? value
-          : context.chart.data.labels[context.dataIndex] + ": " + value + "人",
+          ? `     ${value} ${getPercentage(value, context, 0)}`
+          : `${value}人 ${getPercentage(value, context)}`,
       tooltip: { enabled: false },
     },
     data: {
@@ -85,7 +98,7 @@ const result = [
   },
   {
     title: "問題五",
-    question: "目前使用的版本控制服務？",
+    question: "目前使用的版本控制服務？(複選)",
     type: "bar",
     key: "question5",
     basis: "basis-1/3",
@@ -111,11 +124,11 @@ const result = [
   },
   {
     title: "問題六",
-    question: "目前使用的專案管理工具？",
+    question: "目前使用的專案管理工具？(複選)",
     type: "bar",
     key: "question6",
     basis: "basis-full",
-    maxMdHeight: "h-screen",
+    maxMdHeight: "max-md:h-screen",
     chartOptions: {
       indexAxis: "y",
       maintainAspectRatio: maxMd ? false : true,
@@ -139,7 +152,7 @@ const result = [
   },
   {
     title: "問題七",
-    question: "開發過的專案中，自動化測試有包含什麼項目呢？",
+    question: "開發過的專案中，自動化測試有包含什麼項目呢？(複選)",
     type: "bar",
     key: "question7",
     basis: "basis-1/3",
@@ -158,7 +171,7 @@ const result = [
   },
   {
     title: "問題八",
-    question: "使用的雲端服務？",
+    question: "使用的雲端服務？(複選)",
     type: "wordCloud",
     key: "question8",
     basis: "basis-1/3",
@@ -178,10 +191,17 @@ const result = [
   },
   {
     title: "問題九",
-    question: "使用中的基礎設施的架構？",
+    question: "使用中的基礎設施架構？(複選)",
     type: "pie",
     key: "question9",
     basis: "basis-1/3",
+    chartOptions: {
+      formatter: (value, context) =>
+        maxMd
+          ? `${getPercentage(value, context, 0, true, false)}`
+          : `${value} ${getPercentage(value, context, 1, true)}`,
+      tooltip: { enabled: true },
+    },
     data: {
       labels: data.answer09.map((item) => item._id),
       datasets: [
@@ -193,7 +213,7 @@ const result = [
   },
   {
     title: "問題十",
-    question: "使用中的基礎設施部署工具？",
+    question: "使用中的基礎設施部署工具？(複選)",
     type: "bar",
     key: "question10",
     basis: "basis-1/3",
@@ -235,7 +255,7 @@ const result = [
   },
   {
     title: "問題十二",
-    question: "使用的配置管理工具？",
+    question: "使用的配置管理工具？(複選)",
     type: "bar",
     key: "question12",
     basis: "basis-1/3",
@@ -254,8 +274,8 @@ const result = [
   },
   {
     title: "問題十三",
-    question: "使用的 CI/CD 工具？",
-    type: "pie",
+    question: "使用的 CI/CD 工具？(複選)",
+    type: "bar",
     key: "question13",
     basis: "basis-1/3",
     data: {
@@ -263,13 +283,17 @@ const result = [
       datasets: [
         {
           data: data.answer13.map((item) => item.count),
+          backgroundColor: "rgb(124 45 18)", // text-900
+          borderColor: "rgb(234 88 12)", // text-600
+          borderWidth: 2,
+          borderRadius: maxMd ? 4 : 8,
         },
       ],
     },
   },
   {
     title: "問題十四",
-    question: "使用的容器化管理工具？",
+    question: "使用的容器化管理工具？(複選)",
     type: "bar",
     key: "question14",
     basis: "basis-1/3",
@@ -288,12 +312,12 @@ const result = [
   },
   {
     title: "問題十五",
-    question: "使用過的系統監控軟體？",
+    question: "使用過的系統監控軟體？(複選)",
     type: "wordCloud",
     key: "question15",
     basis: "basis-1/3",
     chartOptions: {
-      basicFontSize: maxMd ? 16 : 36,
+      basicFontSize: maxMd ? 16 : 28,
       maxValue: 559,
       maxFontSize: maxMd ? 64 : 200,
     },
@@ -308,15 +332,26 @@ const result = [
   },
   {
     title: "問題十六",
-    question: "使用過的 Logs 管理工具？",
-    type: "pie",
+    question: "使用過的 Logs 管理工具？(複選)",
+    type: "bar",
     key: "question16",
     basis: "basis-1/3",
+    chartOptions: {
+      indexAxis: maxMd ? "y" : "x",
+      scales: {
+        x: { grid: { display: maxMd ? true : false } },
+        y: { grid: { display: maxMd ? false : true } },
+      },
+    },
     data: {
       labels: data.answer16.map((item) => item._id),
       datasets: [
         {
           data: data.answer16.map((item) => item.count),
+          backgroundColor: "rgb(12 74 110)", // text-900
+          borderColor: "rgb(2 132 199)", // text-600
+          borderWidth: 2,
+          borderRadius: maxMd ? 4 : 8,
         },
       ],
     },
