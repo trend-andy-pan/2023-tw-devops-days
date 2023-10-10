@@ -1,5 +1,9 @@
 const answer12 = [
   {
+    _id: "Ansible",
+    count: 172,
+  },
+  {
     _id: "無",
     count: 171,
   },
@@ -8,12 +12,12 @@ const answer12 = [
     count: 17,
   },
   {
-    _id: "其他",
-    count: 6,
+    _id: "Chef",
+    count: 17,
   },
   {
-    _id: "Ansible",
-    count: 172,
+    _id: "其他",
+    count: 6,
   },
   {
     _id: "Consul",
@@ -26,10 +30,6 @@ const answer12 = [
   {
     _id: "Helm",
     count: 1,
-  },
-  {
-    _id: "Chef",
-    count: 17,
   },
   {
     _id: "不清楚",

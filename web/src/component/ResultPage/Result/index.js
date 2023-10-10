@@ -38,8 +38,8 @@ export default function Result() {
             </h2>
           </CardHeader>
           <CardBody
-            className={`${item.type === "wordCloud" && "h-96"} max-md:${
-              item.maxMdHeight ?? "h-96"
+            className={`${item.type === "wordCloud" && "h-96"} ${
+              item.maxMdHeight ?? "max-md:h-96"
             }`}
           >
             <Chart

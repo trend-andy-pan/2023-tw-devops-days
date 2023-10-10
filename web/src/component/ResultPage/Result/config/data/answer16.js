@@ -1,23 +1,19 @@
 const answer16 = [
   {
-    _id: "Sumo logic",
-    count: 1,
+    _id: "Elastic Stack",
+    count: 186,
   },
   {
-    _id: "Loki",
-    count: 81,
-  },
-  {
-    _id: "Application Insights",
-    count: 1,
+    _id: "Cloud Watch",
+    count: 101,
   },
   {
     _id: "無",
     count: 90,
   },
   {
-    _id: "Sentry",
-    count: 1,
+    _id: "Loki",
+    count: 81,
   },
   {
     _id: "Graylog",
@@ -28,16 +24,21 @@ const answer16 = [
     count: 2,
   },
   {
-    _id: "Elastic Stack",
-    count: 186,
+    _id: "Sumo logic",
+    count: 1,
+  },
+
+  {
+    _id: "Application Insights",
+    count: 1,
+  },
+  {
+    _id: "Sentry",
+    count: 1,
   },
   {
     _id: "其他",
     count: 1,
-  },
-  {
-    _id: "Cloud Watch",
-    count: 101,
   },
 ];
 
