@@ -29,7 +29,19 @@ module.exports = {
   },
   darkMode: "class",
   plugins: [
-    nextui(),
+    nextui({
+      themes: {
+        dark: {
+          colors: {
+            danger: {
+              DEFAULT: "#d71920",
+              foreground: "#ffffff",
+            },
+            focus: "#d71920",
+          },
+        },
+      },
+    }),
     new DefinePlugin({
       "process.env.HASH_ROUTER": JSON.stringify(
         process.env.HASH_ROUTER || "false"
