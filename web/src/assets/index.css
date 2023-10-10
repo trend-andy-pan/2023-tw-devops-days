@@ -849,10 +849,6 @@ video {
   margin-top: 1.25rem;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
 .mt-8 {
   margin-top: 2rem;
 }
@@ -2210,10 +2206,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-inherit {
-  background-color: inherit;
-}
-
 .bg-TrendMicro {
   background-image: linear-gradient(180deg, #000000, #d71920);
 }
@@ -2444,6 +2436,10 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
 .pl-0 {
   padding-left: 0px;
 }
@@ -2498,10 +2494,6 @@ video {
 
 .pt-6 {
   padding-top: 1.5rem;
-}
-
-.pb-8 {
-  padding-bottom: 2rem;
 }
 
 .text-left {
@@ -2869,11 +2861,6 @@ video {
 
 .shadow-warning\/40 {
   --tw-shadow-color: hsl(var(--nextui-warning) / 0.4);
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
-.shadow-transparent {
-  --tw-shadow-color: transparent;
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -3276,7 +3263,7 @@ video {
   --nextui-foreground-800: 240 5% 96%;
   --nextui-foreground-900: 0 0% 98%;
   --nextui-foreground: 210 6% 93%;
-  --nextui-focus: 212 100% 47%;
+  --nextui-focus: 358 79% 47%;
   --nextui-overlay: 0 0% 0%;
   --nextui-divider: 0 0% 100%;
   --nextui-divider-opacity: 0.15;
@@ -3359,7 +3346,7 @@ video {
   --nextui-danger-800: 340 92% 90%;
   --nextui-danger-900: 339 92% 95%;
   --nextui-danger-foreground: 0 0% 100%;
-  --nextui-danger: 339 90% 51%;
+  --nextui-danger: 358 79% 47%;
   --nextui-spacing-unit: 4px;
   --nextui-spacing-unit-0: 0px;
   --nextui-spacing-unit-1: 4px;
@@ -6419,14 +6406,6 @@ body {
     margin-bottom: 0.25rem;
   }
 
-  .max-md\:mb-1 {
-    margin-bottom: 0.25rem;
-  }
-
-  .max-md\:mt-1 {
-    margin-top: 0.25rem;
-  }
-
   .max-md\:mt-0 {
     margin-top: 0px;
   }
@@ -6466,16 +6445,16 @@ body {
     padding-bottom: 0.75rem;
   }
 
-  .max-md\:pt-3 {
-    padding-top: 0.75rem;
-  }
-
   .max-md\:pb-1 {
     padding-bottom: 0.25rem;
   }
 
   .max-md\:pb-3 {
     padding-bottom: 0.75rem;
+  }
+
+  .max-md\:pt-3 {
+    padding-top: 0.75rem;
   }
 
   .max-md\:text-base {

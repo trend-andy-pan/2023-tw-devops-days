@@ -1,7 +1,15 @@
-import { Card, CardBody } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Button } from "@nextui-org/react";
 import AnimatedNumbers from "react-animated-numbers";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
+
+  const routeChange = () => {
+    let path = `/result/trend-micro`;
+    navigate(path);
+  };
+
   return (
     <div className="max-md:my-1 my-8">
       <Card className="bg-transparent" fullWidth>
@@ -17,6 +25,16 @@ export default function Footer() {
             <p>人，感謝您的參與！</p>
           </div>
         </CardBody>
+        <CardFooter className="justify-center">
+          <Button
+            color="danger"
+            size="lg"
+            variant="ghost"
+            onClick={routeChange}
+          >
+            來看看趨勢人怎麼說
+          </Button>
+        </CardFooter>
       </Card>
     </div>
   );
