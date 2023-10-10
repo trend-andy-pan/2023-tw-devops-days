@@ -8,6 +8,7 @@ import { QuestionnairesProvider } from "./context/questionnaires";
 import ErrorPage from "./component/ErrorPage";
 import Main from "./component/Main";
 import ResultPage from "./component/ResultPage";
+import ResultTrendMicroPage from "./component/ResultTrendMicroPage";
 
 const routes = [
   {
@@ -23,6 +24,10 @@ const routes = [
   {
     path: "/result",
     element: <ResultPage />,
+  },
+  {
+    path: "/result/trend-micro",
+    element: <ResultTrendMicroPage />,
   },
   {
     path: "*",

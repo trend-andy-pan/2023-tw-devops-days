@@ -14,12 +14,16 @@ module.exports = {
       },
       backgroundImage: {
         "personal-map": "url('./devopsRoadmap.svg')",
+        TrendMicro: "linear-gradient(180deg, #000000, #d71920)",
       },
       height: {
         "half-screen": "50vh",
       },
       backgroundPosition: {
         "top-20": "center top -5rem",
+      },
+      colors: {
+        TrendMicro: "#d71920",
       },
     },
   },
