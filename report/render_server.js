@@ -19,7 +19,7 @@ var bodyParser = require("body-parser");
 var reactRender = require("react-render");
 
 // Ensure support for loading files that contain ES6+7 & JSX
-require("babel-core/register");
+require("@babel/register");
 
 var ADDRESS = argv.address;
 var PORT = argv.port;
