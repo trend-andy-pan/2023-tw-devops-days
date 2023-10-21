@@ -1,7 +1,7 @@
-FROM --platform=linux/amd64 nikolaik/python-nodejs:python3.9-nodejs18-slim
+FROM nikolaik/python-nodejs:python3.9-nodejs18-slim
 
 COPY ./ /app
-WORKDIR /app/basic_rendering
+WORKDIR /app
 
 RUN pip install -r requirements.txt
 RUN npm i
