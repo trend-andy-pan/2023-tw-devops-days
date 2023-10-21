@@ -1,104 +1,88 @@
-module.exports = function (grunt) {
-  require("load-grunt-tasks")(grunt);
+module.exports = function(grunt) {
 
-  grunt.loadNpmTasks("grunt-contrib-clean");
+  require('load-grunt-tasks')(grunt);
+
+  grunt.loadNpmTasks('grunt-execute');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.initConfig({
+
     clean: ["dist"],
 
     copy: {
       src_to_dist: {
-        cwd: "src",
+        cwd: 'src',
         expand: true,
-        src: ["**/*", "!**/*.js", "!**/*.scss"],
-        dest: "dist",
+        src: ['**/*', '!**/*.js', '!**/*.scss'],
+        dest: 'dist'
       },
       server_to_dist: {
-        cwd: "server",
+        cwd: 'server',
         expand: true,
-        src: ["**/*"],
-        dest: "dist/server",
+        src: ['**/*'],
+        dest: 'dist/server'
       },
       pluginDef: {
         expand: true,
-        src: ["README.md"],
-        dest: "dist",
-      },
+        src: ['README.md'],
+        dest: 'dist'
+      }
     },
 
     watch: {
       rebuild_all: {
-        files: ["src/**/*"],
-        tasks: ["default"],
-        options: { spawn: false },
-      },
+        files: ['src/**/*'],
+        tasks: ['default'],
+        options: {spawn: false}
+      }
     },
 
     babel: {
       options: {
         sourceMap: true,
-        presets: [
-          "@babel/preset-env",
-          {
-            useBuiltIns: "entry",
-            corejs: "3.22",
-          },
-        ],
+        presets:  ['es2015']
       },
       dist: {
         options: {
-          plugins: [],
+          plugins: ['transform-es2015-modules-systemjs', 'transform-es2015-for-of']
         },
-        files: [
-          {
-            cwd: "src",
-            expand: true,
-            src: ["**/*.js"],
-            dest: "dist",
-            ext: ".js",
-          },
-        ],
+        files: [{
+          cwd: 'src',
+          expand: true,
+          src: ['**/*.js'],
+          dest: 'dist',
+          ext:'.js'
+        }]
       },
       distTestNoSystemJs: {
-        files: [
-          {
-            cwd: "src",
-            expand: true,
-            src: ["**/*.js"],
-            dest: "dist/test",
-            ext: ".js",
-          },
-        ],
+        files: [{
+          cwd: 'src',
+          expand: true,
+          src: ['**/*.js'],
+          dest: 'dist/test',
+          ext:'.js'
+        }]
       },
       distTestsSpecsNoSystemJs: {
-        files: [
-          {
-            expand: true,
-            cwd: "spec",
-            src: ["**/*.js"],
-            dest: "dist/test/spec",
-            ext: ".js",
-          },
-        ],
-      },
+        files: [{
+          expand: true,
+          cwd: 'spec',
+          src: ['**/*.js'],
+          dest: 'dist/test/spec',
+          ext:'.js'
+        }]
+      }
     },
 
     mochaTest: {
       test: {
         options: {
-          reporter: "spec",
+          reporter: 'spec'
         },
-        src: ["dist/test/spec/test-main.js", "dist/test/spec/*_spec.js"],
-      },
-    },
+        src: ['dist/test/spec/test-main.js', 'dist/test/spec/*_spec.js']
+      }
+    }
   });
 
-  grunt.registerTask("default", [
-    "clean",
-    "copy:src_to_dist",
-    "copy:server_to_dist",
-    "copy:pluginDef",
-    "babel",
-    "mochaTest",
-  ]);
+  grunt.registerTask('default', ['clean', 'copy:src_to_dist', 'copy:server_to_dist', 'copy:pluginDef', 'babel', 'mochaTest']);
 };
