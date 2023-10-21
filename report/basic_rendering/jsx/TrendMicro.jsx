@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-class TrendMicro extends Component {
+class TrendMicro extends React.Component {
   render() {
     return (
       <svg
