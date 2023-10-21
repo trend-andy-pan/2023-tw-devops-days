@@ -417,10 +417,11 @@ function logTiming(body, elapsedTimeMs) {
   if (serverConfig.logTimings) {
     var range = new Date(body.range.to) - new Date(body.range.from);
     var diff = moment.duration(range);
+    var interval = body.interval.replace(/\n|\r/g, ""); //log-injection
 
     console.log(
       "Request: " +
-        intervalCount(diff, body.interval, body.intervalMs) +
+        intervalCount(diff, interval, body.intervalMs) +
         " - Returned in " +
         elapsedTimeMs.toFixed(2) +
         "ms"
