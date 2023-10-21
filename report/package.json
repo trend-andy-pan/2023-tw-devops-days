@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.22.15",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-render": "^4.0.0",
+    "yargs": "^3.29.0"
+  }
+}
