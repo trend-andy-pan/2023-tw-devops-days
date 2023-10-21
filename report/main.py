@@ -1,11 +1,9 @@
-
-import cairosvg
-import os
 import pymongo
-from react.render import render_component
+import os
+import cairosvg
 from datetime import datetime
 import csv
-import json
+from react.render import render_component
 
 mongo_str = ""
 

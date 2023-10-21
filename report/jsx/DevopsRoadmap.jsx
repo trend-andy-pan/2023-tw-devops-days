@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import TrendMicro from "./TrendMicro";
 
-class DevopsRoadmap extends React.Component {
+class DevopsRoadmap extends Component {
   constructor(props) {
     super(props);
   }
@@ -14,6 +14,8 @@ class DevopsRoadmap extends React.Component {
 
     const selectColor = type === "text" ? selectTextColor : selectBgColor;
     const unSelectColor = type === "text" ? unSelectTextColor : unSelectBgColor;
+
+    if (!this.props.answers) return unSelectColor;
 
     let answer = this.props.answers[`answer-${answerNo}`];
 
@@ -1263,7 +1265,7 @@ class DevopsRoadmap extends React.Component {
               fill="#FFFFFF"
               y="1280.6625"
               x="1171"
-              font-weight="bold"
+              fontWeight="bold"
               stroke="#FFFFFF"
             >
               Secret Management
